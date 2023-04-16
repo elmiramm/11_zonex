@@ -72,9 +72,9 @@ window.onload = function () {
 
 	//-------Active links on Page--------
 	const page = document.querySelector('.page');
-	if (page.classList.contains("about")) {
-		const about = document.querySelectorAll('.menu__list-link').forEach(elem => {
-			if (elem.textContent === "About") {
+	if (page.classList.contains("main-page")) {
+		const elements = document.querySelectorAll('.menu__list-link').forEach(elem => {
+			if (elem.textContent === "Elements") {
 				elem.classList.add('active-header-link');
 			}
 		})

@@ -3,10 +3,11 @@ $fontFamily: "Jost";
 $fontSize: 13px;
 $mainTextColor: #151515;
 $textColor: #858585;
+$accentColor: #ff1847;
 
 $bg: #fff;
 
-$maxWidthContainer: 1140px;
+$maxWidthContainer: 1850px;
 
 $bp992: 991.98px;
 $bp768: 767.98px;
@@ -107,7 +108,7 @@ select {
 	margin: 0 auto;
 }
 .container-fluid {
-	max-width: 1920px;
+	max-width: 1820px;
 	margin: 0 auto;
 	padding: 0 26px;
 }
