@@ -1,0 +1,29 @@
+.breadcrumbs {
+	background-color: rgba($color: #DFDFDF, $alpha: 0.5);
+	padding: 14px 0px;
+	position: relative;
+	z-index: 100;
+
+	&__list {
+		display: flex;
+		overflow-x: auto;
+	}
+	&__list-item {
+		position: relative;
+		padding-right: 8px;
+
+	}
+	&__list-item:not(:last-child):after {
+		content: "/";
+		position: absolute;
+	}
+	&__list-link {
+		font-size: 14px;
+		line-height: 2;
+		&:hover {
+			color: #000;
+			transition: color 0.3s ease;
+		}
+	}
+}
+

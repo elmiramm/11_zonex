@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<svg width="64px" height="64px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <g class="layer">
+  <title>Layer 1</title>
+  <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+  <g id="SVGRepo_iconCarrier">
+   <path d="m505,102l0,295.18l-501,0l0,-295.18l501,0zm-105,38l-360,-1l0,222l360,0l0,-221z" fill-rule="evenodd" id="svg_1"/>
+  </g>
+ </g>
+</svg>

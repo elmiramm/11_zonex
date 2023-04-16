@@ -1,0 +1,132 @@
+@font-face {
+	font-family: 'icons';
+	font-display: swap;
+	src:
+		url('../fonts/icons.woff') format('woff'), url('fonts/icons.woff2#icons') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+
+%ic {
+	font-family: 'icons';
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+
+[class^="icon-"], [class*=" icon-"] {
+	&:before {
+		@extend %ic;
+		display: block;
+	}
+}
+
+.icon-arrow:before {
+	content: "\e900";
+ }
+ .icon-arrow-right:before {
+	content: "\e901";
+ }
+ .icon-bag:before {
+	content: "\e902";
+ }
+ .icon-close:before {
+	content: "\e903";
+ }
+ .icon-down:before {
+	content: "\e904";
+ }
+ .icon-eye:before {
+	content: "\e905";
+ }
+ .icon-facebook:before {
+	content: "\e906";
+ }
+ .icon-fire:before {
+	content: "\e907";
+ }
+ .icon-instagram:before {
+	content: "\e908";
+ }
+ .icon-lightning:before {
+	content: "\e909";
+ }
+ .icon-like:before {
+	content: "\e90a";
+ }
+ .icon-mastercard:before {
+	content: "\e90b";
+ }
+ .icon-medal:before {
+	content: "\e90c";
+ }
+ .icon-minus:before {
+	content: "\e90d";
+ }
+ .icon-paypal .path1:before {
+	content: "\e90e";
+	color: rgb(0, 48, 135);
+ }
+ .icon-paypal .path2:before {
+	content: "\e90f";
+	margin-left: -3.6484375em;
+	color: rgb(0, 156, 222);
+ }
+ .icon-paypal .path3:before {
+	content: "\e910";
+	margin-left: -3.6484375em;
+	color: rgb(0, 48, 135);
+ }
+ .icon-paypal .path4:before {
+	content: "\e911";
+	margin-left: -3.6484375em;
+	color: rgb(0, 156, 222);
+ }
+ .icon-paypal .path5:before {
+	content: "\e912";
+	margin-left: -3.6484375em;
+	color: rgb(0, 48, 135);
+ }
+ .icon-paypal .path6:before {
+	content: "\e913";
+	margin-left: -3.6484375em;
+	color: rgb(0, 156, 222);
+ }
+ .icon-paypal-black:before {
+	content: "\e914";
+ }
+ .icon-pinterest:before {
+	content: "\e915";
+ }
+ .icon-plus:before {
+	content: "\e916";
+ }
+ .icon-rectangle:before {
+	content: "\e917";
+ }
+ .icon-search:before {
+	content: "\e918";
+ }
+ .icon-star:before {
+	content: "\e919";
+ }
+ .icon-star-filled:before {
+	content: "\e91a";
+ }
+ .icon-twitter:before {
+	content: "\e91b";
+ }
+ .icon-user:before {
+	content: "\e91c";
+ }
+ .icon-visa:before {
+	content: "\e91d";
+ }
+ 
