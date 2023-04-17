@@ -667,6 +667,11 @@ select {
   background: #000;
 }
 
+.intro {
+  background-color: #ff1847;
+  height: 100vh;
+}
+
 .social {
   display: flex;
   gap: 36px;
