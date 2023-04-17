@@ -1,0 +1,90 @@
+// @media (max-width: 1280px) {
+	
+// }
+// @media (max-width: $bp992) {
+	
+// }
+@media (max-width: $burgerBP) {
+	.wrapper {
+		position: relative;
+	}
+	.header {
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			width: 100%;
+			height: 90px;
+			top: 0;
+			left: 0;
+			right: 0;
+			background-color: #fff;
+			z-index: 2;
+
+		}
+		&__inner {
+			flex-wrap: wrap;
+			align-items: center;
+		}
+	}
+	.menu {
+		width: 100%;
+		transform: translateY(-1000px);
+		transition: transform 0.3s ease;
+		position: relative;
+		z-index: 1;
+		&--open {
+			transform: translateY(0px);
+		}
+		&__list {
+			flex-direction: column;
+			padding-top: 60px;
+			margin: 0 -15px;
+			padding-bottom: 30px;
+			border-bottom: 2px solid $mainTextColor;
+			background-color: rgba($color: $mainTextColor
+		, $alpha: 0.3);
+		}
+		&__list-item {
+			margin-bottom: 10px;
+		}
+	}
+	.logo {
+		order: -1;
+		margin: 0;
+		position: relative;
+		z-index: 3;
+	}
+	.user {
+		order: -1;
+		flex: 1 1 auto;
+		position: relative;
+		z-index: 3;
+	}
+	.burger {
+		order: -1;
+	}
+}
+// @media (max-width: $bp768) {
+	
+// }
+// @media (max-width: 680px) {
+	
+// }
+// @media (max-width: 520px) {
+	
+// }
+@media (max-width: $bp480) {
+	.user {
+		gap: 15px;
+	}
+	.burger {
+		margin-left: 15px;
+	}
+	.logo {
+		width: 35%;
+	}
+}
+// @media (max-width: $bp320) {
+	
+// }
