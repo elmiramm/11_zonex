@@ -64,6 +64,8 @@
 		align-items: center;
 		gap: 4px;
 		&-count {
+			display: block;
+			margin-right: 15px;
 			background-color: $mainTextColor;
 			color: #fff;
 			border-radius: 50%;
