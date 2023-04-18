@@ -78,17 +78,17 @@ if (document.querySelector('.slider-intro__body')) {
 		speed: 800,
 		loopAdditionalSlides: 5,
 		preloadImage: false,
-		simulateTouch: false, //вкл/выкл перетаскинавия на ПК
+		simulateTouch: true, //вкл/выкл перетаскивания на ПК
 		pagination: {
 			el: '.slider-intro__controls .dots',
 			clickable: true, //true - можно кликнуть на dotts и перейти на нужный слайд
 			dynamicBullets: false, // ]true - dots будут менять размер в зависимости от того насколько далеко расположены от активного dots
 		},
-		autoplay: {
-			delay: 3000, //Пауза м.д. прокрутками
-			stopOnLastSlide: false,
-			disabledOnInteraction: false,
-		},
+		// autoplay: {
+		// 	delay: 3000, //Пауза м.д. прокрутками
+		// 	stopOnLastSlide: false,
+		// 	disabledOnInteraction: false,
+		// },
 		effect: 'slide', //значение по умолчанию - перелистывает слайды, 'fade' - смена прозрачности
 		// breakpoints: { //Mobile First - значения от заданной точки и больше 
 		// 	279: {

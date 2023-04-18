@@ -6,6 +6,7 @@
 	padding-top: 33px;
 	padding-bottom: 33px;
 	min-height: 90px;
+
 	&__inner {
 		display: flex;
 		justify-content: space-between;
@@ -15,6 +16,8 @@
 }
 
 .menu {
+	position: relative;
+	z-index: 4;
 	width: 40%;
 	&__list {
 		display: flex;
@@ -44,6 +47,8 @@
 .logo {
 	width: 115px;
 	margin: 0 15px;
+	position: relative;
+	z-index: 6;
 }
 
 .user {
@@ -52,6 +57,8 @@
 	gap: 25px;
 	align-items: center;
 	width: 40%;
+	position: relative;
+	z-index: 6;
 	&__cart {
 		display: flex;
 		align-items: center;

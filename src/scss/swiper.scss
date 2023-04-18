@@ -8,26 +8,30 @@
 
 .swiper-pagination-bullets {
 	display: flex;
-	gap: 30px;
+	gap: 10px;
 }
 .swiper-pagination-bullet {
 	cursor: pointer;
-	flex: 0 0 8px;
-	height: 8px;
+	flex: 0 0 20px;
+	height: 20px;
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
 	&::after {
 		content: "";
-		width: 8px;
-		height: 8px;
-		background-color: $mainTextColor;
+		width: 6px;
+		height: 6px;
+		background-color: rgba($color: #fff, $alpha: 0.5);
 		border-radius: 50%;
 		transition: background-color 0.3 ease;
 	}
 }
 
 .swiper-pagination-bullet-active {
+	background-color: rgba($color: #fff, $alpha: 0.5);
+	border-radius: 50%;
 	&::after {
 		background-color: $mainTextColor;
 	}

@@ -7,7 +7,7 @@
 		position: relative;
 		height: 19px;
 		width: 20px;
-		z-index: 3;
+		z-index: 6;
 
 		cursor: pointer;
 	
@@ -55,5 +55,6 @@
 			transform: scale(1);
 			transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
 		}
+
 	}
 }

@@ -64,6 +64,7 @@
 
 .icon-close:before {
   content: "\e903";
+  cursor: pointer;
 }
 
 .icon-down:before {
@@ -361,26 +362,30 @@
 
 .swiper-pagination-bullets {
   display: flex;
-  gap: 30px;
+  gap: 10px;
 }
 
 .swiper-pagination-bullet {
   cursor: pointer;
-  flex: 0 0 8px;
-  height: 8px;
+  flex: 0 0 20px;
+  height: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .swiper-pagination-bullet::after {
   content: "";
-  width: 8px;
-  height: 8px;
-  background-color: #151515;
+  width: 6px;
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   transition: background-color 0.3 ease;
 }
 
+.swiper-pagination-bullet-active {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+}
 .swiper-pagination-bullet-active::after {
   background-color: #151515;
 }
@@ -522,6 +527,8 @@ select {
 }
 
 .menu {
+  position: relative;
+  z-index: 4;
   width: 40%;
 }
 .menu__list {
@@ -550,6 +557,8 @@ select {
 .logo {
   width: 115px;
   margin: 0 15px;
+  position: relative;
+  z-index: 6;
 }
 
 .user {
@@ -558,6 +567,8 @@ select {
   gap: 25px;
   align-items: center;
   width: 40%;
+  position: relative;
+  z-index: 6;
 }
 .user__cart {
   display: flex;
@@ -592,7 +603,7 @@ select {
     position: relative;
     height: 19px;
     width: 20px;
-    z-index: 3;
+    z-index: 6;
     cursor: pointer;
   }
   .burger::before, .burger::after {
@@ -668,8 +679,102 @@ select {
 }
 
 .intro {
-  background-color: #ff1847;
+  position: relative;
   height: 100vh;
+}
+.intro__slider {
+  height: 100%;
+}
+.intro__slider-item {
+  display: flex;
+  align-items: center;
+}
+.intro__slider-item::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+.intro__slider-img {
+  position: absolute;
+  min-height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+.intro__slider-content {
+  margin-left: 15%;
+  max-width: 536px;
+  position: relative;
+  z-index: 3;
+}
+.intro__title {
+  font-size: 72px;
+  line-height: 1.17;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.intro__link,
+.intro span {
+  font-size: 18px;
+}
+.intro__link:hover {
+  color: #ff1847;
+}
+
+.slider-intro__body {
+  height: 100%;
+}
+
+.slider-intro__controls {
+  position: absolute;
+  bottom: 40px;
+  z-index: 3;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.purched {
+  width: 280px;
+  padding: 10px;
+  display: flex;
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  z-index: 6;
+  background-color: #fff;
+  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.1);
+  font-size: 11px;
+  line-height: 1.2;
+  color: #858585;
+}
+.purched__content {
+  padding: 3px 5px 0px 10px;
+}
+.purched__title {
+  margin: 10px 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #151515;
+}
+.purched__text--italic {
+  font-style: italic;
+}
+.purched__icons-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.icon-eye:hover,
+.icon-close:hover {
+  color: #ff1847;
 }
 
 .social {
@@ -709,18 +814,6 @@ select {
   .wrapper {
     position: relative;
   }
-  .header::before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 90px;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: #fff;
-    z-index: 2;
-  }
   .header__inner {
     flex-wrap: wrap;
     align-items: center;
@@ -729,34 +822,35 @@ select {
     width: 100%;
     transform: translateY(-1000px);
     transition: transform 0.3s ease;
-    position: relative;
-    z-index: 1;
   }
   .menu--open {
     transform: translateY(0px);
   }
   .menu__list {
     flex-direction: column;
-    padding-top: 60px;
-    margin: 0 -15px;
+    padding-top: 120px;
+    margin: -60px -15px 0px;
     padding-bottom: 30px;
     border-bottom: 2px solid #151515;
-    background-color: rgba(21, 21, 21, 0.3);
+    background-color: rgba(21, 21, 21, 0.5);
+    color: #fff;
   }
   .menu__list-item {
     margin-bottom: 10px;
   }
+  .menu .active-header-link {
+    border-bottom: 2px solid #fff;
+  }
+  .menu .active-header-link:hover {
+    color: #fff;
+  }
   .logo {
     order: -1;
     margin: 0;
-    position: relative;
-    z-index: 3;
   }
   .user {
     order: -1;
     flex: 1 1 auto;
-    position: relative;
-    z-index: 3;
   }
   .burger {
     order: -1;
