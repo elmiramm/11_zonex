@@ -764,11 +764,15 @@ select {
 .purched__content {
   padding: 3px 5px 0px 10px;
 }
+.purched__img {
+  height: 105px;
+}
 .purched__title {
   margin: 10px 0;
   font-size: 15px;
   font-weight: 700;
   color: #151515;
+  min-height: 37px;
 }
 .purched__text--italic {
   font-style: italic;

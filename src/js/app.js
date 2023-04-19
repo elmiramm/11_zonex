@@ -6,7 +6,8 @@ import mixitup from 'mixitup';
 flsFunctions.isWebp();
 
 
-//--------MixitUp---------
+
+//--------MixitUp------------------------------------------------------------------
 if (document.querySelector(".gallery__inner")) {
 	var mixer = mixitup('.gallery__inner', {
 		load: {
@@ -14,11 +15,12 @@ if (document.querySelector(".gallery__inner")) {
 		}
 	});
 }
-//--------MixitUp-End--------
+//--------MixitUp-End---------------------------------------------------------------
 
 
 
-// ------Swiper-------
+
+// ------Swiper-----------------------------------------------------------------------
 Swiper.use([Navigation, Pagination, Parallax, Autoplay]);
 
 // if (document.querySelector('.slider-section__body')) {
@@ -106,14 +108,17 @@ if (document.querySelector('.slider-intro__body')) {
 		// }
 	});
 }
-// ------Swiper-End-------
+// ------Swiper-End---------------------------------------------------------------------
+
 
 
 
 window.onload = function () {
 	document.addEventListener('click', documentActions);
 
-	//-------Active links on Page--------
+
+
+	//-------Active links on Page------------------------------------------------------
 	const page = document.querySelector('.page');
 	if (page.classList.contains("main-page")) {
 		const elements = document.querySelectorAll('.menu__list-link').forEach(elem => {
@@ -143,11 +148,70 @@ window.onload = function () {
 			}
 		})
 	}
-	//-------Active links on Page-End-------
+	//-------Active links on Page-End----------------------------------------------------
 
 
 
-	//------Действия-при-кликах------
+
+	//-------Change-puched-blog-content--------------------------------------------------
+	const purchedBlogData = [
+		{
+			imgSrc: 'img/purched/purched-1.jpg',
+			title: 'Faux shearling double-breasted coat',
+			info: '15 minutes ago London, Great Britain'
+		},
+		{
+			imgSrc: 'img/purched/purched-2.jpg',
+			title: 'Band-collar popover coat',
+			info: '20 minutes ago Rome, Italy'
+		},
+		{
+			imgSrc: 'img/purched/purched-3.jpg',
+			title: 'Triple stone drop earrings',
+			info: '25 minutes ago Kazan, Russia'
+		},
+		{
+			imgSrc: 'img/purched/purched-4.jpg',
+			title: 'Backpack with contrasting buckle',
+			info: '30 minutes ago San-Francisco, USA'
+		},
+		{
+			imgSrc: 'img/purched/purched-5.jpg',
+			title: 'Tailored indigo jumpsuit',
+			info: '35 minutes ago Seoul, South Korea'
+		}
+	]
+	const purchedBlog = document.querySelector('.purched');
+	let counter = 0;
+	let delay = 5000;
+	const changePurchedBlogContent = () => {
+		purchedBlog.classList.remove('purched--visible');
+		setTimeout(() => {
+			purchedBlog.classList.add('purched--visible');
+		}, delay - 2000);
+
+		const stringImgSrc = `${purchedBlogData[counter].imgSrc}`;
+		const stringTitle = `${purchedBlogData[counter].title}`;
+		const stringInfo = `${purchedBlogData[counter].info};`
+
+		purchedBlog.querySelector('.purched__img').src = stringImgSrc;
+		purchedBlog.querySelector('.purched__title').textContent = stringTitle;
+		purchedBlog.querySelector('.purched__info').textContent = stringInfo;
+
+		counter++;
+		if (counter === purchedBlogData.length) {
+			counter = 0;
+		}
+	}
+
+	changePurchedBlogContent();
+	setInterval(changePurchedBlogContent, delay);
+	//-------Change-puched-blog-content-End----------------------------------------------
+
+
+
+
+	//------Действия-при-кликах----------------------------------------------------------
 	function documentActions(e) {
 		const targetElement = e.target;
 
@@ -176,15 +240,15 @@ window.onload = function () {
 		// -------Если кликнули на бургер-End----------
 
 
-		// -----Purched-blog-----------
+		// -----Purched-blog-Click-on-close-btn-------
+		// скрыть баннер 
 		if (targetElement.classList.contains('icon-close') || targetElement.closest('.icon-close')) {
-			const purchedBlog = document.querySelector('.purched');
 			purchedBlog.classList.remove('purched--visible');
 		}
-
-		// -------Purched-blog-End------
+		//скрыть баннер - End 
+		// -------Purched-blog-Click-on-close-btn-End-----------------------
 
 	}
-	//------Действия-при-кликах-End-----
+	//------Действия-при-кликах-End-------------------------------------------------------------
 
 }
