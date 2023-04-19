@@ -2,7 +2,9 @@ import * as flsFunctions from "./modules/functions.js";
 import Swiper, { Navigation, Pagination, Parallax, Autoplay } from 'swiper';
 import mixitup from 'mixitup';
 
+
 flsFunctions.isWebp();
+
 
 //--------MixitUp---------
 if (document.querySelector(".gallery__inner")) {
@@ -13,6 +15,7 @@ if (document.querySelector(".gallery__inner")) {
 	});
 }
 //--------MixitUp-End--------
+
 
 
 // ------Swiper-------
@@ -64,9 +67,6 @@ Swiper.use([Navigation, Pagination, Parallax, Autoplay]);
 // 		// }
 // 	});
 // }
-
-// ------Swiper-End-------
-
 if (document.querySelector('.slider-intro__body')) {
 	new Swiper('.slider-intro__body', {
 		observer: true, //обновляет swiper при изменении элементов слайдера
@@ -106,6 +106,10 @@ if (document.querySelector('.slider-intro__body')) {
 		// }
 	});
 }
+// ------Swiper-End-------
+
+
+
 window.onload = function () {
 	document.addEventListener('click', documentActions);
 
@@ -147,6 +151,7 @@ window.onload = function () {
 	function documentActions(e) {
 		const targetElement = e.target;
 
+
 		//------------Close/Open-rightsite-menu-------------
 		if (targetElement.classList.contains('header__btn') || targetElement.closest('.header__btn')) {
 			document.querySelector(".rightsite-menu").classList.remove('rightsite-menu--close');
@@ -155,6 +160,7 @@ window.onload = function () {
 			document.querySelector(".rightsite-menu").classList.add('rightsite-menu--close');
 		}
 		//------------Close/Open-rightsite-menu-End------------
+
 
 		// ---------Если кликнули на бургер---------
 		if (targetElement.classList.contains('burger') || targetElement.closest('.burger')) {
@@ -168,6 +174,16 @@ window.onload = function () {
 			})
 		}
 		// -------Если кликнули на бургер-End----------
+
+
+		// -----Purched-blog-----------
+		if (targetElement.classList.contains('icon-close') || targetElement.closest('.icon-close')) {
+			const purchedBlog = document.querySelector('.purched');
+			purchedBlog.classList.remove('purched--visible');
+		}
+
+		// -------Purched-blog-End------
+
 	}
 	//------Действия-при-кликах-End-----
 

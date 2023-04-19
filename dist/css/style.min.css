@@ -755,6 +755,11 @@ select {
   font-size: 11px;
   line-height: 1.2;
   color: #858585;
+  transform: translateX(-150%);
+  transition: transform 0.3s ease;
+}
+.purched--visible {
+  transform: translateX(0);
 }
 .purched__content {
   padding: 3px 5px 0px 10px;
