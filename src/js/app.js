@@ -121,33 +121,40 @@ window.onload = function () {
 	//-------Active links on Page------------------------------------------------------
 	const page = document.querySelector('.page');
 	if (page.classList.contains("main-page")) {
-		const elements = document.querySelectorAll('.menu__list-link').forEach(elem => {
+		document.querySelectorAll('.menu__list-link').forEach(elem => {
 			if (elem.textContent === "Elements") {
-				elem.classList.add('active-header-link');
+				elem.classList.add('active-link');
+			}
+		});
+		document.querySelectorAll('.banners__item-content').forEach(elem => {
+			const title = elem.querySelector('.banners__item-title');
+			const link = elem.querySelector('.banners__item-link');
+			if (title.textContent === "Summer Romance") {
+				link.classList.add('active-link');
 			}
 		})
 	}
-	if (page.classList.contains("gallery")) {
-		const gallery = document.querySelectorAll('.menu__list-link').forEach(elem => {
-			if (elem.textContent === "Gallery") {
-				elem.classList.add('active-header-link');
-			}
-		})
-	}
-	if (page.classList.contains("contact")) {
-		const contact = document.querySelectorAll('.menu__list-link').forEach(elem => {
-			if (elem.textContent === "Contact") {
-				elem.classList.add('active-header-link');
-			}
-		})
-	}
-	if (page.classList.contains("blog-page")) {
-		const contact = document.querySelectorAll('.menu__list-link').forEach(elem => {
-			if (elem.textContent === "Blog") {
-				elem.classList.add('active-header-link');
-			}
-		})
-	}
+	// if (page.classList.contains("gallery")) {
+	// 	const gallery = document.querySelectorAll('.menu__list-link').forEach(elem => {
+	// 		if (elem.textContent === "Gallery") {
+	// 			elem.classList.add('active-link');
+	// 		}
+	// 	})
+	// }
+	// if (page.classList.contains("contact")) {
+	// 	const contact = document.querySelectorAll('.menu__list-link').forEach(elem => {
+	// 		if (elem.textContent === "Contact") {
+	// 			elem.classList.add('active-header-link');
+	// 		}
+	// 	})
+	// }
+	// if (page.classList.contains("blog-page")) {
+	// 	const contact = document.querySelectorAll('.menu__list-link').forEach(elem => {
+	// 		if (elem.textContent === "Blog") {
+	// 			elem.classList.add('active-header-link');
+	// 		}
+	// 	})
+	// }
 	//-------Active links on Page-End----------------------------------------------------
 
 

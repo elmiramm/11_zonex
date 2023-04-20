@@ -546,14 +546,6 @@ select {
   color: #ff1847;
 }
 
-.active-header-link {
-  border-bottom: 2px solid #151515;
-}
-.active-header-link:hover {
-  color: #151515;
-  cursor: default;
-}
-
 .logo {
   width: 115px;
   margin: 0 15px;
@@ -680,9 +672,18 @@ select {
   background: #000;
 }
 
+a.active-link {
+  border-bottom: 2px solid #151515;
+}
+a.active-link:hover {
+  color: #151515;
+  cursor: default;
+}
+
 .intro {
   position: relative;
   height: 100vh;
+  margin-bottom: 80px;
 }
 .intro__slider {
   height: 100%;
@@ -789,6 +790,43 @@ select {
   color: #ff1847;
 }
 
+.banners__container {
+  height: 100%;
+  min-height: 335px;
+}
+.banners__list {
+  display: flex;
+  gap: 10px;
+  align-items: start;
+  justify-content: space-between;
+}
+.banners__item {
+  position: relative;
+  width: 33%;
+  padding: 60px;
+}
+.banners__item-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.banners__item-content {
+  position: relative;
+  z-index: 2;
+  max-width: 60%;
+}
+.banners__item-title {
+  font-size: 36px;
+  line-height: 1.25;
+}
+.banners__item-link {
+  font-size: 15px;
+}
+.banners__item-link:hover {
+  color: #ff1847;
+}
+
 .social {
   display: flex;
   gap: 36px;
@@ -861,12 +899,6 @@ select {
   }
   .menu__list-item {
     margin-bottom: 10px;
-  }
-  .menu .active-header-link {
-    border-bottom: 2px solid #fff;
-  }
-  .menu .active-header-link:hover {
-    color: #fff;
   }
   .logo {
     order: -1;

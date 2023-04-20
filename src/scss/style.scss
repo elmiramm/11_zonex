@@ -150,8 +150,17 @@ select {
 @import "breadcrumbs.scss";
 @import "footer.scss";
 
+a.active-link {
+	border-bottom: 2px solid $mainTextColor;
+	&:hover {
+		color: $mainTextColor;
+		cursor: default;
+	}
+}
+
 // -----Общие блоки-End -----
 @import "intro.scss";
+@import "banners.scss";
 
 @import "social.scss";
 

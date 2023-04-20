@@ -1,0 +1,39 @@
+.banners {
+	&__container {
+		height: 100%;
+		min-height: 335px;
+	}
+	&__list {
+		display: flex;
+		gap: 10px;
+		align-items: start;
+		justify-content: space-between;
+	}
+	&__item {
+		position: relative;
+		width: 33%;
+
+		padding: 60px;
+	}
+	&__item-img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+	&__item-content {
+		position: relative;
+		z-index: 2;
+		max-width: 60%;
+	}
+	&__item-title {
+		font-size: 36px;
+		line-height: 1.25;
+	}
+	&__item-link {
+		font-size: 15px;
+		&:hover {
+			color: $accentColor;
+		}
+	}
+}
