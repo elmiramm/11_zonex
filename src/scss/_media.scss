@@ -11,10 +11,48 @@
 			font-size: 13px;
 		}
 	}
+	.banners {
+		&__item-title {
+			font-size: 25px;
+		}
+	}
 }
-// @media (max-width: $bp992) {
-	
-// }
+@media (max-width: $bp992) {
+	.intro {
+		margin-bottom: 50px;
+	}
+	.banners {
+		margin-bottom: 50px;
+		&__list {
+			flex-wrap: wrap;
+		}
+		&__item {
+			min-height: 150px;
+			width: 100%;
+
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding-top: 0;
+			padding-bottom: 0;
+			padding-right: 0;
+			&:first-child {
+				background-color: #cfd1d0;
+			}
+			&:nth-child(2) {
+				background-color: #e9e4df;
+			}
+			&:nth-child(3) {
+				background-color: #eeeeec;
+			}
+		}
+
+		&__item-img {
+			left: auto;
+			height: 150px;
+		}
+	}
+}
 @media (max-width: $burgerBP) {
 	.wrapper {
 		position: relative;
@@ -96,6 +134,9 @@
 	}
 	.purched {
 		left: 10px;
+	}
+	.banners__item-title {
+		font-size: 20px;
 	}
 	
 }

@@ -790,9 +790,11 @@ a.active-link:hover {
   color: #ff1847;
 }
 
+.banners {
+  margin-bottom: 80px;
+}
 .banners__container {
   height: 100%;
-  min-height: 335px;
 }
 .banners__list {
   display: flex;
@@ -803,7 +805,7 @@ a.active-link:hover {
 .banners__item {
   position: relative;
   width: 33%;
-  padding: 60px;
+  padding: 3%;
 }
 .banners__item-img {
   position: absolute;
@@ -870,6 +872,43 @@ a.active-link:hover {
   }
   .intro__link, .intro .intro span {
     font-size: 13px;
+  }
+  .banners__item-title {
+    font-size: 25px;
+  }
+}
+@media (max-width: 991.98px) {
+  .intro {
+    margin-bottom: 50px;
+  }
+  .banners {
+    margin-bottom: 50px;
+  }
+  .banners__list {
+    flex-wrap: wrap;
+  }
+  .banners__item {
+    min-height: 150px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+  }
+  .banners__item:first-child {
+    background-color: #cfd1d0;
+  }
+  .banners__item:nth-child(2) {
+    background-color: #e9e4df;
+  }
+  .banners__item:nth-child(3) {
+    background-color: #eeeeec;
+  }
+  .banners__item-img {
+    left: auto;
+    height: 150px;
   }
 }
 @media (max-width: 880px) {
@@ -938,6 +977,9 @@ a.active-link:hover {
   }
   .purched {
     left: 10px;
+  }
+  .banners__item-title {
+    font-size: 20px;
   }
 }
 @media (max-width: 319.98px) {
