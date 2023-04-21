@@ -919,6 +919,12 @@ a.active-link:hover {
     flex-wrap: wrap;
     align-items: center;
   }
+  .header a.active-link {
+    border-color: #fff;
+  }
+  .header a.active-link:hover {
+    color: #fff;
+  }
   .menu {
     width: 100%;
     transform: translateY(-1000px);
