@@ -852,6 +852,9 @@ button.active-link:hover {
   gap: 20px 10px;
   margin-bottom: 65px;
 }
+.products__list-item {
+  position: relative;
+}
 .products__img {
   height: 442px;
   margin-bottom: 25px;
@@ -877,6 +880,18 @@ button.active-link:hover {
 }
 .products__item-title {
   font-weight: 500;
+}
+.products__item-link:hover {
+  color: #ff1847;
+}
+.products__item-link::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
 }
 .products__price {
   font-size: 13px;
