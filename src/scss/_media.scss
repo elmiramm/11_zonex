@@ -50,7 +50,11 @@
 		&__item-img {
 			left: auto;
 			height: 150px;
+			width: auto;
 		}
+	}
+	.products {
+		margin-bottom: 50px;
 	}
 }
 @media (max-width: $burgerBP) {

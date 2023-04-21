@@ -38,7 +38,7 @@ body {
 
 	font-family: $fontFamily, sans-serif;
 	font-size: $fontSize;
-	font-weight: 400;
+	font-weight: 500;
 	line-height: 2;
 	color: $mainTextColor;
 	background-color: $bg;
@@ -150,7 +150,8 @@ select {
 @import "breadcrumbs.scss";
 @import "footer.scss";
 
-a.active-link {
+a.active-link,
+button.active-link {
 	border-bottom: 2px solid $mainTextColor;
 	&:hover {
 		color: $mainTextColor;
@@ -161,6 +162,7 @@ a.active-link {
 // -----Общие блоки-End -----
 @import "intro.scss";
 @import "banners.scss";
+@import "products.scss";
 
 @import "social.scss";
 

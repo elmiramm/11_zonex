@@ -406,7 +406,7 @@ body {
   height: 100%;
   font-family: "Jost", sans-serif;
   font-size: 13px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 2;
   color: #151515;
   background-color: #fff;
@@ -672,10 +672,12 @@ select {
   background: #000;
 }
 
-a.active-link {
+a.active-link,
+button.active-link {
   border-bottom: 2px solid #151515;
 }
-a.active-link:hover {
+a.active-link:hover,
+button.active-link:hover {
   color: #151515;
   cursor: default;
 }
@@ -812,6 +814,8 @@ a.active-link:hover {
   top: 0;
   left: 0;
   right: 0;
+  height: 100%;
+  width: 100%;
 }
 .banners__item-content {
   position: relative;
@@ -827,6 +831,77 @@ a.active-link:hover {
 }
 .banners__item-link:hover {
   color: #ff1847;
+}
+
+.products {
+  margin-bottom: 100px;
+}
+.products__nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 40px;
+  font-size: 24px;
+  line-height: 1.2;
+}
+.products__list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 65px;
+}
+.products__list-item {
+  max-width: 18%;
+}
+.products__item-img {
+  min-height: 444px;
+  width: 100%;
+  margin-bottom: 25px;
+}
+.products__item-status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.products__item-status::before {
+  font-size: 13px;
+}
+.products .display-none {
+  display: none;
+}
+.products__item-title {
+  font-weight: 500;
+}
+.products__price {
+  font-size: 13px;
+  font-weight: 700;
+}
+.products__price-sale {
+  display: inline-block;
+  font-weight: 500;
+  text-decoration: line-through;
+  color: #959595;
+  margin-left: 10px;
+}
+.products__load-more-btn {
+  color: #858585;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column-reverse;
+  row-gap: 10px;
+  align-items: center;
+}
+.products__load-more-btn:hover {
+  color: #151515;
+}
+.products__load-more-btn::before {
+  font-weight: 800;
 }
 
 .social {
@@ -909,6 +984,10 @@ a.active-link:hover {
   .banners__item-img {
     left: auto;
     height: 150px;
+    width: auto;
+  }
+  .products {
+    margin-bottom: 50px;
   }
 }
 @media (max-width: 880px) {

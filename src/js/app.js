@@ -8,12 +8,8 @@ flsFunctions.isWebp();
 
 
 //--------MixitUp------------------------------------------------------------------
-if (document.querySelector(".gallery__inner")) {
-	var mixer = mixitup('.gallery__inner', {
-		load: {
-			filter: '.living',
-		}
-	});
+if (document.querySelector(".products__inner")) {
+	var mixer = mixitup('.products__inner');
 }
 //--------MixitUp-End---------------------------------------------------------------
 
