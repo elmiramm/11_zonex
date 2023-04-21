@@ -13,21 +13,22 @@
 		line-height: 1.2;
 	}
 	&__list {
-		width: 100%;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		gap: 30px;
+		gap: 20px 10px;
 
 		margin-bottom: 65px;
 	}
-	&__list-item {
-		max-width: 18%;
+	
+	&__img {
+		height: 442px;
+		margin-bottom: 25px;
+		width: 340px;
 	}
 	&__item-img {
-		min-height: 444px;
+		height: 100%;
 		width: 100%;
-		margin-bottom: 25px;
 	}
 	&__item-status {
 		display: flex;
