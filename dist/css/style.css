@@ -919,6 +919,49 @@ button.active-link:hover {
   font-weight: 800;
 }
 
+.shops {
+  margin-bottom: 100px;
+  background-color: #ff1847;
+}
+.shops__banners {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.shops__banner {
+  min-height: 420px;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #d7c2c2;
+}
+.shops__banner--mens {
+  background-image: url("../img/shops-banner-1.jpg");
+}
+.shops__banner--womens {
+  background-image: url("../img/shops-banner-2.jpg");
+}
+.shops__banner-link {
+  color: white;
+}
+.shops__banner-link span {
+  font-size: 15px;
+}
+.shops__banner-link span:hover {
+  border-bottom: 2px solid #fff;
+}
+.shops__banner-title {
+  font-size: 48px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
 .social {
   display: flex;
   gap: 36px;

@@ -1,0 +1,44 @@
+.shops {
+
+	margin-bottom: 100px;
+	background-color: $accentColor;
+	&__banners {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__banner {
+		min-height: 420px;
+		height: 100%;
+		width: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-color: #d7c2c2;
+		&--mens {
+			background-image: url("../img/shops-banner-1.jpg");
+		}
+		&--womens {
+			background-image: url("../img/shops-banner-2.jpg");
+		}
+	}
+	&__banner-link {
+		color: white;
+		span {
+			font-size: 15px;
+			&:hover {
+				border-bottom: 2px solid #fff;
+			}
+			
+		}
+	}
+	&__banner-title {
+		font-size: 48px;
+		line-height: 1.2;
+		font-weight: 500;
+	}
+}
