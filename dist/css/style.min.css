@@ -921,7 +921,6 @@ button.active-link:hover {
 
 .shops {
   margin-bottom: 100px;
-  background-color: #ff1847;
 }
 .shops__banners {
   display: flex;
@@ -1000,6 +999,14 @@ button.active-link:hover {
     justify-content: center;
   }
 }
+@media (max-width: 1100px) {
+  .shops__banner {
+    min-height: 250px;
+  }
+  .shops__banner-title {
+    font-size: 35px;
+  }
+}
 @media (max-width: 1350px) {
   .intro__slider-content {
     margin-left: 10%;
@@ -1050,6 +1057,9 @@ button.active-link:hover {
     width: auto;
   }
   .products {
+    margin-bottom: 50px;
+  }
+  .shops {
     margin-bottom: 50px;
   }
 }
@@ -1106,6 +1116,21 @@ button.active-link:hover {
   .products__nav {
     flex-direction: column;
   }
+  .shops__banners {
+    flex-wrap: wrap;
+  }
+  .shops__banner {
+    min-height: 420px;
+    width: 100%;
+  }
+  .shops__banner-title {
+    font-size: 35px;
+  }
+}
+@media (max-width: 520px) {
+  .shops__banner {
+    min-height: 220px;
+  }
 }
 @media (max-width: 479.98px) {
   .user {
@@ -1134,9 +1159,29 @@ button.active-link:hover {
   .banners__item-title {
     font-size: 20px;
   }
+  .shops__banner {
+    min-height: 200px;
+  }
+  .shops__banner-title {
+    font-size: 25px;
+  }
+  .products__img {
+    height: 410px;
+    width: 300px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 380px) {
+  .products__img {
+    height: 250px;
+    width: 200px;
+  }
 }
 @media (max-width: 319.98px) {
   .purched {
     width: 240px;
+  }
+  .shops__banner {
+    min-height: 135px;
   }
 }

@@ -5,6 +5,16 @@
 		}
 	}
 }
+@media (max-width: 1100px) {
+	.shops {
+		&__banner {
+			min-height: 250px;
+		}
+		&__banner-title {
+			font-size: 35px;
+		}
+	}
+}
 @media (max-width: 1350px) {
 	.intro {
 		&__slider-content {
@@ -61,6 +71,9 @@
 		}
 	}
 	.products {
+		margin-bottom: 50px;
+	}
+	.shops {
 		margin-bottom: 50px;
 	}
 }
@@ -123,14 +136,27 @@
 			flex-direction: column;
 		}
 	}
-
+	.shops {
+		&__banners {
+			flex-wrap: wrap;
+		}
+		&__banner {
+			min-height: 420px;
+			width: 100%;
+		}
+		&__banner-title {
+			font-size: 35px;
+		}
+	}
 }
-// @media (max-width: 680px) {
-	
-// }
-// @media (max-width: 520px) {
-	
-// }
+
+@media (max-width: 520px) {
+	.shops {
+		&__banner {
+			min-height: 220px;
+		}
+	}
+}
 @media (max-width: $bp480) {
 	.user {
 		gap: 15px;
@@ -160,17 +186,39 @@
 	.banners__item-title {
 		font-size: 20px;
 	}
-	
+	.shops {
+		&__banner {
+			min-height: 200px;
+		}
+		&__banner-title {
+			font-size: 25px;
+		}
+	}
+	.products__img {
+		height: 410px;
+		width: 300px;
+
+		margin: 0 auto;
+	}
+}
+@media (max-width: 380px) {
+	.products__img {
+		height: 250px;
+		width: 200px;
+	}
 }
 @media (max-width: $bp320) {
 	.purched {
 		width: 240px;
 	}
+	.shops {
+		&__banner {
+			min-height: 135px;
+		}
+	}
 }
 
-// @media (max-width: $bp320) {
-	
-// }
+
 // @media (max-width: $bp320) {
 	
 // }
