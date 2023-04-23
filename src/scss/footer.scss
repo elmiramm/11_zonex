@@ -1,3 +1,55 @@
 .footer {
-	background: #000;
+	&__container {
+		max-width: 1360px;
+		padding: 0 15px;
+		margin: 0 auto;
+	}&__top {
+		margin-bottom: 100px;
+		&-list {
+			display: flex;
+			justify-content: space-between;
+		}
+		.footer {
+			&__list-title {
+				line-height: 1.2;
+				font-size: 16px;
+				font-weight: 700;
+				text-transform: uppercase;
+				margin-bottom: 40px;
+			}
+			&__menu-list {
+				color: #454545;
+				line-height: 1.2;
+			}
+			&__menu-item {
+				&:not(:last-child) {
+					margin-bottom: 25px;
+				}
+			}
+			&__menu-form {
+				min-width: 650px;
+				display: flex;
+				justify-content: space-between;
+				gap: 30px;
+				border-bottom: 2px solid #151515;
+				padding-bottom: 10px;
+			}
+			&__form-input {
+				flex: 1 1 auto;
+				border: none;
+				padding: 5px 5px 5px 3px;
+				&::placeholder {
+					color: #a8a8a8;
+				}
+			}
+			&__form-btn {
+				color: #151515;
+				padding: 5px;
+				&:hover {
+					color: $accentColor;
+					transition: all 0.3s ease;
+				}
+			}
+		}
+	}
 }
