@@ -1,10 +1,11 @@
 import * as flsFunctions from "./modules/functions.js";
 import Swiper, { Navigation, Pagination, Parallax, Autoplay } from 'swiper';
 import mixitup from 'mixitup';
+import { spoilers } from "./modules/spoilers.js";
 
 
 flsFunctions.isWebp();
-
+spoilers();
 
 
 //--------MixitUp------------------------------------------------------------------
