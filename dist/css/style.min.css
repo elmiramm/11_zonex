@@ -718,6 +718,41 @@ select {
   color: #ff1847;
   transition: all 0.3s ease;
 }
+.footer__bottom {
+  padding: 45px 15px 45px 0;
+  border-top: 1px solid #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.copyright {
+  font-size: 13px;
+  line-height: 1.2;
+  font-weight: 700;
+  display: flex;
+  gap: 44px;
+}
+.copyright__link:hover {
+  color: #ff1847;
+}
+
+.social {
+  display: flex;
+  gap: 30px;
+}
+.social__link.icon-twitter:hover {
+  color: #1D9BF0;
+}
+.social__link.icon-facebook:hover {
+  color: #3b5998;
+}
+.social__link.icon-instagram:hover {
+  color: #d62976;
+}
+.social__link.icon-pinterest:hover {
+  color: #D32F2F;
+}
 
 a.active-link,
 button.active-link {

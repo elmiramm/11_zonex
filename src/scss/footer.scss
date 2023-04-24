@@ -3,7 +3,8 @@
 		max-width: 1360px;
 		padding: 0 15px;
 		margin: 0 auto;
-	}&__top {
+	}
+	&__top {
 		margin-bottom: 100px;
 		&-list {
 			display: flex;
@@ -49,6 +50,55 @@
 					color: $accentColor;
 					transition: all 0.3s ease;
 				}
+			}
+		}
+	}
+	&__bottom {
+		padding: 45px 15px 45px 0;
+		border-top: 1px solid #eeeeee;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
+.copyright {
+	font-size: 13px;
+	line-height: 1.2;
+	font-weight: 700;
+
+	display: flex;
+	gap: 44px;
+
+	&__link {
+		&:hover {
+			color: $accentColor;
+		}
+	}
+}
+
+.social {
+	display: flex;
+	gap: 30px;
+	&__link {
+		&.icon-twitter {
+			&:hover {
+				color: #1D9BF0;
+			}
+		}
+		&.icon-facebook {
+			&:hover {
+				color: #3b5998;
+			}
+		}
+		&.icon-instagram {
+			&:hover {
+				color: #d62976;
+			}
+		}
+		&.icon-pinterest {
+			&:hover {
+				color: #D32F2F;
 			}
 		}
 	}
