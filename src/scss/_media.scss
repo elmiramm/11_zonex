@@ -76,6 +76,52 @@
 	.shops {
 		margin-bottom: 50px;
 	}
+	.footer {
+		&__top {
+			margin-bottom: 10px;
+			.footer {
+				&__top-list {
+					flex-direction: column;
+					align-items: start;
+				}
+				&__list-item:last-child {
+					width: 100%;
+				}
+				&__list-title {
+					display: flex;
+					flex-direction: row-reverse;
+					justify-content: start;
+					gap: 20px;
+					&::before {
+						width: 13px;
+						height: 13px;
+						display: block;
+						font-size: 13px;
+						transform: rotate(90deg);
+						transition: transform 0.3s ease;
+					}
+					&._active::before {
+						transform: rotate(270deg);
+					}
+				}
+				&__menu-item:last-child {
+					margin-bottom: 25px;
+				}
+				&__menu-form {
+					min-width: 100%;
+					gap: 10px;
+				}
+			}
+		}
+		&__bottom {
+			padding: 30px 0;
+			flex-direction: column-reverse;
+			row-gap: 30px;
+		}
+	}
+	.copyright {
+		gap: 15px;
+	}
 }
 @media (max-width: $burgerBP) {
 	.wrapper {
@@ -205,6 +251,9 @@
 	.products__img {
 		height: 250px;
 		width: 200px;
+	}
+	.copyright {
+		flex-direction: column;
 	}
 }
 @media (max-width: $bp320) {

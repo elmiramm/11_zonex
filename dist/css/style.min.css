@@ -687,12 +687,18 @@ select {
   text-transform: uppercase;
   margin-bottom: 40px;
 }
+.footer__top .footer__list-title::before {
+  display: none;
+}
 .footer__top .footer__menu-list {
   color: #454545;
   line-height: 1.2;
 }
 .footer__top .footer__menu-item:not(:last-child) {
   margin-bottom: 25px;
+}
+.footer__top .footer__menu-link:hover {
+  color: #ff1847;
 }
 .footer__top .footer__menu-form {
   min-width: 650px;
@@ -1111,6 +1117,48 @@ button.active-link:hover {
   .shops {
     margin-bottom: 50px;
   }
+  .footer__top {
+    margin-bottom: 10px;
+  }
+  .footer__top .footer__top-list {
+    flex-direction: column;
+    align-items: start;
+  }
+  .footer__top .footer__list-item:last-child {
+    width: 100%;
+  }
+  .footer__top .footer__list-title {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: start;
+    gap: 20px;
+  }
+  .footer__top .footer__list-title::before {
+    width: 13px;
+    height: 13px;
+    display: block;
+    font-size: 13px;
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+  }
+  .footer__top .footer__list-title._active::before {
+    transform: rotate(270deg);
+  }
+  .footer__top .footer__menu-item:last-child {
+    margin-bottom: 25px;
+  }
+  .footer__top .footer__menu-form {
+    min-width: 100%;
+    gap: 10px;
+  }
+  .footer__bottom {
+    padding: 30px 0;
+    flex-direction: column-reverse;
+    row-gap: 30px;
+  }
+  .copyright {
+    gap: 15px;
+  }
 }
 @media (max-width: 880px) {
   .wrapper {
@@ -1224,6 +1272,9 @@ button.active-link:hover {
   .products__img {
     height: 250px;
     width: 200px;
+  }
+  .copyright {
+    flex-direction: column;
   }
 }
 @media (max-width: 319.98px) {

@@ -17,6 +17,9 @@
 				font-weight: 700;
 				text-transform: uppercase;
 				margin-bottom: 40px;
+				&::before {
+					display: none;
+				}
 			}
 			&__menu-list {
 				color: #454545;
@@ -25,6 +28,11 @@
 			&__menu-item {
 				&:not(:last-child) {
 					margin-bottom: 25px;
+				}
+			}
+			&__menu-link {
+				&:hover {
+					color: $accentColor;
 				}
 			}
 			&__menu-form {
