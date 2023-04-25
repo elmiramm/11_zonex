@@ -120,6 +120,8 @@ select {
 	transition: all 0.3s ease;
 	color: #fff;
 	background-color: $mainTextColor;
+
+	line-height: 1.2;
 	@media (any-hover: hover) {
 		&:hover {
 			background-color: #fff;
@@ -129,6 +131,10 @@ select {
 			color: $mainTextColor;
 			background-color: #fff;
 			border: 1px solid $mainTextColor;
+			&:hover {
+				color: #000;
+				background-color: #eee;
+			}
 		}
 	}
 }
@@ -162,6 +168,7 @@ button.active-link {
 @import "banners.scss";
 @import "products.scss";
 @import "shops.scss";
+@import "catalog-intro.scss";
 
 
 // Adaptive 

@@ -1,0 +1,62 @@
+.catalog-intro {
+	margin-top: 90px;
+	background-color: #f8f8f8;
+	.slider-catalog {
+		padding: 0px 110px;
+		position: relative;
+	}
+	.swiper-slide {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__content {
+		max-width: 375px;
+	}
+	&__title {
+		font-size: 36px;
+		line-height: 1.2;
+		font-weight: 700;
+
+		margin-bottom: 23px;
+	}
+	&__text {
+		font-size: 15px;
+		line-height: 1.86;
+
+		margin-bottom: 53px;
+	}
+	&__img {
+		margin-right: 150px;
+	}
+	&__buttons {
+		display: flex;
+		gap: 15px;
+	}
+	.slider-arrows {
+		width: 100%;
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		display: flex;
+		justify-content: space-between;
+	}
+	.slider-arrow {
+		padding: 15px;
+		border: 1px solid $mainTextColor;
+		color: $mainTextColor;
+		font-weight: 700;
+		transition: all 0.3s ease;
+		&:hover {
+			background-color: $mainTextColor;
+			color: #fff;
+		}
+		&::before {
+			font-size: 10px;
+		}
+		&--prev {
+			transform: rotate(-180deg);
+		}
+	}
+}
