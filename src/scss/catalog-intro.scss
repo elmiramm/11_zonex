@@ -41,8 +41,11 @@
 		transform: translateY(-50%);
 		display: flex;
 		justify-content: space-between;
+		z-index: 4;
 	}
 	.slider-arrow {
+		margin-right: 15px;
+		margin-left: 15px;
 		padding: 15px;
 		border: 1px solid $mainTextColor;
 		color: $mainTextColor;

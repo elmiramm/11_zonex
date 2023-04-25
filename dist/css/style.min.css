@@ -1094,8 +1094,11 @@ button.active-link:hover {
   transform: translateY(-50%);
   display: flex;
   justify-content: space-between;
+  z-index: 4;
 }
 .catalog-intro .slider-arrow {
+  margin-right: 15px;
+  margin-left: 15px;
   padding: 15px;
   border: 1px solid #151515;
   color: #151515;
@@ -1223,6 +1226,18 @@ button.active-link:hover {
   .copyright {
     gap: 15px;
   }
+  .catalog-intro .slider-catalog {
+    padding: 0px 75px;
+  }
+  .catalog-intro__title {
+    font-size: 24px;
+  }
+  .catalog-intro__img {
+    margin-right: 0px;
+  }
+  .catalog-intro__buttons {
+    flex-direction: column;
+  }
 }
 @media (max-width: 880px) {
   .wrapper {
@@ -1286,6 +1301,34 @@ button.active-link:hover {
   }
   .shops__banner-title {
     font-size: 35px;
+  }
+  .catalog-intro .slider-catalog {
+    padding: 0;
+  }
+  .catalog-intro .swiper-slide {
+    min-height: 486px;
+  }
+  .catalog-intro__content {
+    padding: 10px;
+    position: relative;
+    z-index: 3;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  .catalog-intro__img {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+  }
+  .catalog-intro .slider-arrows {
+    top: 93%;
+    transform: translateY(0);
+  }
+  .catalog-intro .slider-arrow {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 8px;
   }
 }
 @media (max-width: 520px) {
