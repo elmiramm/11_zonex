@@ -129,15 +129,15 @@ window.onload = function () {
 			if (title.textContent === "Summer Romance") {
 				link.classList.add('active-link');
 			}
-		})
+		});
 	}
-	// if (page.classList.contains("gallery")) {
-	// 	const gallery = document.querySelectorAll('.menu__list-link').forEach(elem => {
-	// 		if (elem.textContent === "Gallery") {
-	// 			elem.classList.add('active-link');
-	// 		}
-	// 	})
-	// }
+	if (page.classList.contains("catalog-page")) {
+		document.querySelectorAll('.menu__list-link').forEach(elem => {
+			if (elem.textContent === "Shop") {
+				elem.classList.add('active-link');
+			}
+		});
+	}
 	// if (page.classList.contains("contact")) {
 	// 	const contact = document.querySelectorAll('.menu__list-link').forEach(elem => {
 	// 		if (elem.textContent === "Contact") {

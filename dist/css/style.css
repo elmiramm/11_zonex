@@ -472,10 +472,8 @@ select {
   margin: 0 auto;
 }
 
-.container-fluid {
-  max-width: 1820px;
-  margin: 0 auto;
-  padding: 0 26px;
+.container-narrow {
+  max-width: 1360px;
 }
 
 .btn {
@@ -1269,6 +1267,15 @@ button.active-link:hover {
   }
 }
 @media (max-width: 380px) {
+  .user {
+    gap: 10px;
+  }
+  .user__cart-count {
+    margin-right: 5px;
+  }
+  .user .burger {
+    margin-left: 5px;
+  }
   .products__img {
     height: 250px;
     width: 200px;

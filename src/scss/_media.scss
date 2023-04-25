@@ -248,6 +248,15 @@
 	}
 }
 @media (max-width: 380px) {
+	.user {
+		gap: 10px;
+		&__cart-count {
+			margin-right: 5px;
+		}
+		.burger {
+			margin-left: 5px;
+		}
+	}
 	.products__img {
 		height: 250px;
 		width: 200px;
