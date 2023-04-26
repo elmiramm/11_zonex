@@ -6,7 +6,10 @@
 	padding-top: 33px;
 	padding-bottom: 33px;
 	min-height: 90px;
-
+	transition: padding-top 0.3s ease;
+	&.close-unclicked {
+		padding-top: 79px;
+	}
 	&__inner {
 		display: flex;
 		justify-content: space-between;

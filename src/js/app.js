@@ -159,8 +159,6 @@ if (document.querySelector('.slider-catalog__body')) {
 window.onload = function () {
 	document.addEventListener('click', documentActions);
 
-
-
 	//-------Active links on Page------------------------------------------------------
 	const page = document.querySelector('.page');
 	if (page.classList.contains("main-page")) {
@@ -232,33 +230,34 @@ window.onload = function () {
 		}
 	]
 	const purchedBlog = document.querySelector('.purched');
-	let counter = 0;
-	let delay = 5000;
-	const changePurchedBlogContent = () => {
-		purchedBlog.classList.remove('purched--visible');
-		setTimeout(() => {
-			purchedBlog.classList.add('purched--visible');
-		}, delay - 2000);
+	if (purchedBlog) {
+		let counter = 0;
+		let delay = 5000;
+		const changePurchedBlogContent = () => {
+			purchedBlog.classList.remove('purched--visible');
+			setTimeout(() => {
+				purchedBlog.classList.add('purched--visible');
+			}, delay - 2000);
 
-		const stringImgSrc = `${purchedBlogData[counter].imgSrc}`;
-		const stringTitle = `${purchedBlogData[counter].title}`;
-		const stringInfo = `${purchedBlogData[counter].info};`
+			const stringImgSrc = `${purchedBlogData[counter].imgSrc}`;
+			const stringTitle = `${purchedBlogData[counter].title}`;
+			const stringInfo = `${purchedBlogData[counter].info};`
 
-		purchedBlog.querySelector('.purched__img').src = stringImgSrc;
-		purchedBlog.querySelector('.purched__title').textContent = stringTitle;
-		purchedBlog.querySelector('.purched__info').textContent = stringInfo;
+			purchedBlog.querySelector('.purched__img').src = stringImgSrc;
+			purchedBlog.querySelector('.purched__title').textContent = stringTitle;
+			purchedBlog.querySelector('.purched__info').textContent = stringInfo;
 
-		counter++;
-		if (counter === purchedBlogData.length) {
-			counter = 0;
+			counter++;
+			if (counter === purchedBlogData.length) {
+				counter = 0;
+			}
 		}
+
+		changePurchedBlogContent();
+		setInterval(changePurchedBlogContent, delay);
 	}
 
-	changePurchedBlogContent();
-	setInterval(changePurchedBlogContent, delay);
 	//-------Change-puched-blog-content-End----------------------------------------------
-
-
 
 
 	//------Действия-при-кликах----------------------------------------------------------
@@ -292,11 +291,31 @@ window.onload = function () {
 
 		// -----Purched-blog-Click-on-close-btn-------
 		// скрыть баннер 
-		if (targetElement.classList.contains('icon-close') || targetElement.closest('.icon-close')) {
+		if (targetElement.classList.contains('purched__icon-close') || targetElement.closest('.purched__icon-close')) {
 			purchedBlog.classList.remove('purched--visible');
 		}
 		//скрыть баннер - End 
 		// -------Purched-blog-Click-on-close-btn-End-----------------------
+
+		//-----появление рекламного баннера через 5сек после закрытия---------
+		if (targetElement.classList.contains('advertise-banner__close-btn') || targetElement.closest('.advertise-banner__close-btn')) {
+			const header = document.querySelector('.header');
+			const catalogIntro = document.querySelector('.catalog-intro');
+			const advertise = document.querySelector('.advertise-banner');
+			header.classList.remove('close-unclicked');
+			catalogIntro.classList.remove('close-unclicked');
+			advertise.classList.remove('close-unclicked');
+
+			setTimeout(() => {
+				header.classList.add('close-unclicked');
+				catalogIntro.classList.add('close-unclicked');
+				advertise.classList.add('close-unclicked');
+			}, 5000);
+		}
+
+		//----------появление рекламного баннера через 5сек после закрытия-End--------
+
+
 
 	}
 	//------Действия-при-кликах-End-------------------------------------------------------------

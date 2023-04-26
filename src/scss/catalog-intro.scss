@@ -1,6 +1,10 @@
 .catalog-intro {
-	margin-top: 90px;
+	margin-top: 40px;
 	background-color: #f8f8f8;
+	transition: margin-top 0.3s ease;
+	&.close-unclicked {
+		margin-top: 90px;
+	}
 	.slider-catalog {
 		padding: 0px 110px;
 		position: relative;
