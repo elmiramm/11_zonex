@@ -1360,6 +1360,9 @@ button.active-link:hover {
     border: 1px solid #fff;
     padding: 8px;
   }
+  .advertise-banner {
+    padding: 15px 10px;
+  }
 }
 @media (max-width: 520px) {
   .shops__banner {
