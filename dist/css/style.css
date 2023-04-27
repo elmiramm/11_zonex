@@ -460,6 +460,7 @@ select {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  position: relative;
 }
 
 .page {
@@ -573,22 +574,6 @@ select {
   display: flex;
   align-items: center;
   gap: 4px;
-}
-.user__cart-count {
-  display: block;
-  margin-right: 15px;
-  background-color: #151515;
-  color: #fff;
-  border-radius: 50%;
-  padding-left: 3px;
-  padding-right: 3px;
-  min-width: 16px;
-  height: 16px;
-  font-size: 10px;
-  font-weight: 700;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .user__item a:hover {
   color: #ff1847;
@@ -788,6 +773,23 @@ a.active-link:hover,
 button.active-link:hover {
   color: #151515;
   cursor: default;
+}
+
+.count {
+  display: block;
+  margin-right: 15px;
+  background-color: #151515;
+  color: #fff;
+  border-radius: 50%;
+  padding-left: 3px;
+  padding-right: 3px;
+  min-width: 16px;
+  height: 16px;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .intro {
