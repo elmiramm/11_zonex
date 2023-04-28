@@ -1,0 +1,10 @@
+.catalog {
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+	&__content {
+		flex: 1 1 auto;
+	}
+}

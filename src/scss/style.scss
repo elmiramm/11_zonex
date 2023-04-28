@@ -110,6 +110,8 @@ select {
 }
 .container-narrow {
 	max-width: 1360px;
+	padding: 0 15px;
+	margin: 0 auto;
 }
 // -----Общие блоки-----
 .btn {
@@ -186,6 +188,8 @@ button.active-link {
 @import "shops.scss";
 @import "catalog-intro.scss";
 @import "advertise-banner.scss";
+@import "catalog.scss";
+@import "filter.scss";
 
 
 // Adaptive 

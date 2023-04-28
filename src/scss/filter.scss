@@ -1,0 +1,164 @@
+.filter {
+	max-width: 240px;
+	&__hide-block {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 10px;
+
+		padding-top: 20px;
+		padding-bottom: 20px;
+		&::before {
+			font-weight: 700;
+		}
+	}
+	&__hide-btn {
+		font-size: 10px;
+		line-height: 1;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	&__item {
+		padding: 40px 0;
+		border-top: 1px solid #eee;
+	}
+	&__item-top {
+		margin-bottom: 40px;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.icon-plus::before {
+			font-size: 18px;
+			color: #aaa;
+			cursor: pointer;
+		}
+		.icon-plus:hover::before {
+			color: $accentColor;
+			transition: all 0.3s ease;
+		}
+	}
+	&__item-caption {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+	}
+	&__item-title {
+		font-size: 13px;
+		font-weight: 700;
+		text-transform: uppercase;
+		line-height: 1;
+	}
+	&__list {
+		columns: 2;
+		&--colors {
+			columns: 4;
+		}
+		&--discount {
+			columns: 1;
+		}
+	}
+	&__list-item {
+		line-height: 1;
+		margin-bottom: 20px;
+	}
+}
+
+.custom-checkbox {
+	cursor: pointer;
+	display: inline-block;
+	user-select: none;
+	&__input {
+		appearance: none;
+		position: absolute;
+
+		&:checked + .custom-checkbox__text {
+			color: $mainTextColor;
+			&::after {
+				content: '\2713';
+				position: absolute;
+				font-size: 15px;
+				top: -1px;
+				left: 1px;
+			}
+		}
+	}
+	&__text {
+		font-size: 13px;
+		font-weight: 500;
+		color: $textColor;
+		padding-left: 20px;
+
+		position: relative;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 3px;
+			left: 0;
+			width: 11px;
+			height: 11px;
+			border: 1px solid #aaa;
+		}
+	}
+	&--color {
+		width: 24px;
+		height: 24px;
+		border-radius: 50%;
+		position: relative;
+		.custom-checkbox__color {
+			font-size: 0;
+			&::before {
+				content: "";
+				position: absolute;
+				display: block;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 33px;
+				height: 33px;
+				border: 2px solid #aaa;
+				border-radius: 50%;
+				background-color: transparent;
+			}
+		}
+		.custom-checkbox__input:checked + .custom-checkbox__color {
+			&::before {
+				border: 2px solid #000;
+			}
+		}
+		&.red {
+			background-color: #ff0000;
+		}
+		&.orange {
+			background-color: #ffa500;
+		}
+		&.green {
+			background-color: #088d08;
+		}
+		&.white {
+			background: #fff;
+			border: 0.5px solid #000;
+		}
+		&.black {
+			background-color: #000;
+		}
+		&.brown {
+			background-color: #7f4f2d;
+		}
+		&.purple {
+			background-color: #800080;
+		}
+		&.grey {
+			background-color: #808080;
+		}
+		&.blue {
+			background-color: blue;
+		}
+		&.yellow {
+			background-color: yellow
+			;
+		}
+	}
+}
