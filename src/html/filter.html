@@ -164,7 +164,6 @@
 
 
 
-
 	<!-- SIZE -->
 	<div class="filter__item">
 		<div class="filter__item-top">
@@ -175,65 +174,65 @@
 			<div class="filter__toggle icon-plus"></div>
 		</div>
 		<div class="filter__item-bottom">
-			<ul class="filter__list">
+			<ul class="filter__list filter__list--size">
 				<li class="filter__list-item">
-					<label class="custom-checkbox">
+					<label class="custom-checkbox custom-checkbox--size">
 						<input type="checkbox" class="custom-checkbox__input">
-						<span class="custom-checkbox__text">23</span>
+						<span class="custom-checkbox__size">23</span>
 					</label>
 				</li>
 				<li class="filter__list-item">
-					<label class="custom-checkbox">
+					<label class="custom-checkbox custom-checkbox--size">
 						<input type="checkbox" class="custom-checkbox__input">
-						<span class="custom-checkbox__text">24</span>
+						<span class="custom-checkbox__size">24</span>
 					</label>
 				</li>
 				<li class="filter__list-item">
-					<label class="custom-checkbox">
+					<label class="custom-checkbox custom-checkbox--size">
 						<input type="checkbox" class="custom-checkbox__input">
-						<span class="custom-checkbox__text">25</span>
+						<span class="custom-checkbox__size">25</span>
 					</label>
 				</li>
 				<li class="filter__list-item">
-					<label class="custom-checkbox">
+					<label class="custom-checkbox custom-checkbox--size">
 						<input type="checkbox" class="custom-checkbox__input">
-						<span class="custom-checkbox__text">26</span>
+						<span class="custom-checkbox__size">26</span>
 					</label>
 				</li>
 				<li class="filter__list-item">
-					<label class="custom-checkbox">
+					<label class="custom-checkbox custom-checkbox--size">
 						<input type="checkbox" class="custom-checkbox__input">
-						<span class="custom-checkbox__text">27</span>
+						<span class="custom-checkbox__size">27</span>
 					</label>
 				</li>
 				<li class="filter__list-item">
-					<label class="custom-checkbox">
+					<label class="custom-checkbox custom-checkbox--size">
 						<input type="checkbox" class="custom-checkbox__input">
-						<span class="custom-checkbox__text">28</span>
+						<span class="custom-checkbox__size">28</span>
 					</label>
 				</li>
 				<li class="filter__list-item">
-					<label class="custom-checkbox">
+					<label class="custom-checkbox custom-checkbox--size">
 						<input type="checkbox" class="custom-checkbox__input">
-						<span class="custom-checkbox__text">29</span>
+						<span class="custom-checkbox__size">29</span>
 					</label>
 				</li>
-				<li class="filter__list-item">
+				<li class="filter__list-item custom-checkbox--size">
 					<label class="custom-checkbox">
 						<input type="checkbox" class="custom-checkbox__input">
-						<span class="custom-checkbox__text">30</span>
+						<span class="custom-checkbox__size">30</span>
 					</label>
 				</li>
-				<li class="filter__list-item">
+				<li class="filter__list-item custom-checkbox--size">
 					<label class="custom-checkbox">
 						<input type="checkbox" class="custom-checkbox__input">
-						<span class="custom-checkbox__text">31</span>
+						<span class="custom-checkbox__size">31</span>
 					</label>
 				</li>
-				<li class="filter__list-item">
+				<li class="filter__list-item custom-checkbox--size">
 					<label class="custom-checkbox">
 						<input type="checkbox" class="custom-checkbox__input">
-						<span class="custom-checkbox__text">32</span>
+						<span class="custom-checkbox__size">32</span>
 					</label>
 				</li>
 			</ul>
@@ -254,10 +253,24 @@
 			<div class="filter__toggle icon-plus"></div>
 		</div>
 		<div class="filter__item-bottom">
-			<div class="line"></div>
-			<div class="line-filled"></div>
-			<input type="range">
-			<input type="range">
+			<div class="price-input">
+				<div class="field">
+					<span>MIN</span>
+					<input class="input-min" type="number" value="2500">
+				</div>
+				<div class="separator">-</div>
+				<div class="field">
+					<span>MAX</span>
+					<input class="input-max" type="number" value="10000">
+				</div>
+			</div>
+			<div class="slider">
+				<div class="progress"></div>
+			</div>
+			<div class="range-input">
+				<input class="range-min" type="range" min="0" max="10000" value="2500">
+				<input class="range-max" type="range" min="0" max="10000" value="7500">
+			</div>
 		</div>
 	</div>
 	<!-- PRICE-END -->

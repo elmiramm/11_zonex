@@ -56,6 +56,9 @@
 		&--colors {
 			columns: 4;
 		}
+		&--size {
+			columns: 3;
+		}
 		&--discount {
 			columns: 1;
 		}
@@ -157,8 +160,109 @@
 			background-color: blue;
 		}
 		&.yellow {
-			background-color: yellow
-			;
+			background-color: yellow;
 		}
 	}
+	&--size {
+		.custom-checkbox__size {
+			font-size: 13px;
+			line-height: 1;
+			color: $textColor;
+			width: 42px;
+			height: 32px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border: 1px solid $textColor;
+		}
+		.custom-checkbox__input:checked + .custom-checkbox__size {
+			color: $mainTextColor;
+			border: 1px solid $mainTextColor;
+		}
+	}
+}
+
+.price-input {
+	width: 100%;
+
+	display: flex;
+
+	margin-bottom: 20px;
+	.field {
+		height: 45px;
+		width: 100%;
+		display: flex;
+		align-items: center;
+	}
+
+	.field input {
+		width: 100%;
+		height: 100%;
+
+		margin-left: 12px;
+		border: 1px solid $textColor;
+		border-radius: 5px;
+
+		text-align: center;
+		font-size: 13px;
+
+		-moz-appearance: textfield;
+	}
+	input[type="number"]::-webkit-outer-spin-button,
+	input[type="number"]::-webkit-inner-spin-button {
+		appearance: none;
+	}
+
+	.separator {
+		width: 40px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+.slider {
+	height: 5px;
+	background-color: $textColor;
+	border-radius: 5px;
+	position: relative;
+	.progress {
+		height: 5px;
+		background-color: $accentColor;
+		border-radius: 5px;
+
+		position: absolute;
+		left: 25%;
+		right: 25%;
+	}
+}
+.range-input {
+	position: relative;
+	input {
+		position: absolute;
+		top: -7px;
+		height: 5px;
+		width: 100%;
+		background: none;
+		pointer-events: none;
+		appearance: none;
+	}
+}
+input[type="range"]::-webkit-slider-thumb {
+	height: 17px;
+	width: 17px;
+	border-radius: 50%;
+	border: none;
+	-webkit-appearance: none;
+	pointer-events: auto;
+	background-color: $accentColor;
+}
+
+input[type="range"]::-moz-slider-thumb {
+	height: 17px;
+	width: 17px;
+	border-radius: 50%;
+	border: none;
+	-moz-appearance: none;
+	pointer-events: auto;
+	background-color: $accentColor;
 }
