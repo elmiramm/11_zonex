@@ -1369,7 +1369,7 @@ button.active-link:hover {
   border-radius: 5px;
   text-align: center;
   font-size: 13px;
-  -moz-appearance: textfield;
+  appearance: textfield;
 }
 .price-input input[type=number]::-webkit-outer-spin-button,
 .price-input input[type=number]::-webkit-inner-spin-button {

@@ -2,11 +2,11 @@ import * as flsFunctions from "./modules/functions.js";
 import Swiper, { Navigation, Pagination, Parallax, Autoplay } from 'swiper';
 import mixitup from 'mixitup';
 import { spoilers } from "./modules/spoilers.js";
-
+import { filters } from "./modules/filters.js";
 
 flsFunctions.isWebp();
 spoilers();
-
+filters();
 
 //--------MixitUp------------------------------------------------------------------
 if (document.querySelector(".products__inner")) {
