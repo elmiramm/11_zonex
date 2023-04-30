@@ -1177,7 +1177,7 @@ button.active-link:hover {
 }
 
 .filter {
-  max-width: 240px;
+  width: 240px;
 }
 .filter__hide-block {
   display: flex;
@@ -1201,9 +1201,13 @@ button.active-link:hover {
   border-top: 1px solid #eee;
 }
 .filter__item-top {
-  margin-bottom: 40px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+.filter__item-top .filter__toggle {
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 .filter__item-top .icon-plus::before {
@@ -1212,6 +1216,16 @@ button.active-link:hover {
   cursor: pointer;
 }
 .filter__item-top .icon-plus:hover::before {
+  color: #ff1847;
+  transition: all 0.3s ease;
+}
+.filter__item-top .icon-minus::before {
+  font-size: 14px;
+  margin: 2px;
+  color: #aaa;
+  cursor: pointer;
+}
+.filter__item-top .icon-minus:hover::before {
   color: #ff1847;
   transition: all 0.3s ease;
 }
@@ -1225,6 +1239,13 @@ button.active-link:hover {
   font-weight: 700;
   text-transform: uppercase;
   line-height: 1;
+}
+.filter__item-bottom {
+  display: none;
+  margin-top: 40px;
+}
+.filter__item-bottom--open {
+  display: block;
 }
 .filter__list {
   columns: 2;

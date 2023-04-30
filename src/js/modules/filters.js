@@ -23,7 +23,6 @@ export function filters() {
 		});
 	});
 
-
 	rangeInput.forEach(input => {
 		input.addEventListener("input", e => {
 			//getting to ranges value and parsing them to number

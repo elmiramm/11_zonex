@@ -290,12 +290,11 @@ window.onload = function () {
 
 
 		// -----Purched-blog-Click-on-close-btn-------
-		// скрыть баннер 
 		if (targetElement.classList.contains('purched__icon-close') || targetElement.closest('.purched__icon-close')) {
 			purchedBlog.classList.remove('purched--visible');
 		}
-		//скрыть баннер - End 
 		// -------Purched-blog-Click-on-close-btn-End-----------------------
+
 
 		//-----появление рекламного баннера через 5сек после закрытия---------
 		if (targetElement.classList.contains('advertise-banner__close-btn') || targetElement.closest('.advertise-banner__close-btn')) {
@@ -312,9 +311,40 @@ window.onload = function () {
 				advertise.classList.add('close-unclicked');
 			}, 5000);
 		}
-
 		//----------появление рекламного баннера через 5сек после закрытия-End--------
 
+		//----------Filter-----------
+		if (targetElement.classList.contains('filter__hide-btn') || targetElement.classList.contains('filter__hide-block') || targetElement.closest('.filter__hide-block')) {
+			const itemBottom = document.querySelectorAll(".filter__item-bottom--open");
+			if (itemBottom) {
+				itemBottom.forEach(item => {
+					const closestFilterItem = item.closest('.filter__item');
+					const filterToggle = closestFilterItem.querySelector('.filter__toggle');
+					filterToggle.classList.remove('icon-minus');
+					filterToggle.classList.add('icon-plus');
+					item.classList.remove('filter__item-bottom--open');
+				})
+			}
+		}
+
+		if (targetElement.classList.contains('filter__toggle') || targetElement.closest('.filter__toggle')) {
+			const closestFilterItem = targetElement.closest('.filter__item');
+			if (targetElement.classList.contains('icon-minus') || targetElement.closest('.icon-minus')) {
+				const minus = targetElement.closest('icon-minus') || targetElement;
+				minus.classList.remove('icon-minus');
+				minus.classList.add('icon-plus');
+				closestFilterItem.querySelector('.filter__item-bottom').classList.remove("filter__item-bottom--open");
+			} else {
+				const plus = targetElement.closest('icon-plus') || targetElement;
+				plus.classList.remove('icon-plus');
+				plus.classList.add('icon-minus');
+				closestFilterItem.querySelector('.filter__item-bottom').classList.add("filter__item-bottom--open");
+			}
+		}
+
+
+
+		//----------Filter-End----------
 
 
 	}

@@ -1,5 +1,5 @@
 .filter {
-	max-width: 240px;
+	width: 240px;
 	&__hide-block {
 		display: flex;
 		justify-content: flex-start;
@@ -24,18 +24,33 @@
 		border-top: 1px solid #eee;
 	}
 	&__item-top {
-		margin-bottom: 40px;
-
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		.filter__toggle {
+			// min-height: 18px;
+			// min-width: 18px;
 
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 		.icon-plus::before {
 			font-size: 18px;
 			color: #aaa;
 			cursor: pointer;
 		}
 		.icon-plus:hover::before {
+			color: $accentColor;
+			transition: all 0.3s ease;
+		}
+		.icon-minus::before {
+			font-size: 14px;
+			margin: 2px;
+			color: #aaa;
+			cursor: pointer;
+		}
+		.icon-minus:hover::before {
 			color: $accentColor;
 			transition: all 0.3s ease;
 		}
@@ -50,6 +65,13 @@
 		font-weight: 700;
 		text-transform: uppercase;
 		line-height: 1;
+	}
+	&__item-bottom {
+		display: none;
+		margin-top: 40px;
+		&--open {
+			display: block;
+		}
 	}
 	&__list {
 		columns: 2;
