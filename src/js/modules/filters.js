@@ -44,6 +44,4 @@ export function filters() {
 		});
 	});
 
-
-
 }

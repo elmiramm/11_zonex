@@ -1174,6 +1174,7 @@ button.active-link:hover {
 }
 .catalog__content {
   flex: 1 1 auto;
+  max-width: 987px;
 }
 
 .filter {

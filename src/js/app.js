@@ -341,9 +341,6 @@ window.onload = function () {
 				closestFilterItem.querySelector('.filter__item-bottom').classList.add("filter__item-bottom--open");
 			}
 		}
-
-
-
 		//----------Filter-End----------
 
 
