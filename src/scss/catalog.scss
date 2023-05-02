@@ -8,4 +8,135 @@
 		flex: 1 1 auto;
 		max-width: 987px;
 	}
+	&__products {
+		margin-top: 15px;
+	}
+	.products__list {
+		gap: 50px 30px;
+		margin-bottom: 70px;
+	}
+	.products__list-item {
+		max-width: 224px;
+	}
+	.products__img {
+		height: 282px;
+		width: 224px;
+	}
+}
+
+.props {
+	&__top {
+		padding: 15px 0px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__column {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
+	&__column-list {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__text {
+		font-size: 10px;
+		line-height: 1;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+	&__column-button {
+		padding: 6px 8px;
+		line-height: 1;
+		font-weight: 700;
+		color: $textColor;
+		&--active {
+			color: $mainTextColor;
+			border-bottom: 2px solid $mainTextColor;
+		}
+	}
+}
+
+.choice {
+	padding: 5px 0px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+.choice-btn {
+	background-color: #eee;
+	border-radius: 25px;
+	padding: 5px 15px;
+	line-height: 1;
+
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+
+	transition: all 0.5s ease;
+
+	&:hover {
+		color: #fff;
+		background-color: $mainTextColor;
+	}
+}
+
+.clear-btn {
+	line-height: 1.5;
+	border-bottom: 1px solid transparent;
+	transition: all 0.3s ease;
+	&:hover {
+		border-bottom: 1px solid $mainTextColor;
+		color: #000;
+	}
+}
+
+.pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 6px;
+
+	font-size: 10px;
+	line-height: 1;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: $textColor;
+
+	&__item {
+		padding: 13px 15px;
+		border: 2px solid $textColor;
+		transition: all 0.3s ease;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 5px;
+
+		&::before {
+			font-size: 10px;
+		}
+		&--prev {
+			&::before {
+				transform: rotate(180deg);
+			}
+		}
+		&--next {
+			flex-direction: row-reverse;
+		}
+		&:hover {
+			border: 2px solid $mainTextColor;
+			background-color: $mainTextColor;
+			color: #fff;
+		}
+		&--active {
+			border: 2px solid $mainTextColor;
+			background-color: $mainTextColor;
+			color: #fff;
+		}
+	}
 }

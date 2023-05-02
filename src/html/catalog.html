@@ -16,7 +16,7 @@
 									<button class="props__column-button">3</button>
 								</li>
 								<li class="props__column-item">
-									<button class="props__column-button">4</button>
+									<button class="props__column-button props__column-button--active">4</button>
 								</li>
 								<li class="props__column-item">
 									<button class="props__column-button">5</button>
@@ -28,15 +28,15 @@
 						</select>
 					</div>
 					<div class="catalog__choice choice">
-						<button class="choice__item choise__btn choice-btn icon-close">Accessories</button>
-						<button class="choice__item choise__btn choice-btn icon-close">28</button>
-						<button class="choice__item choise__btn choice-btn icon-close">medium</button>
-						<button class="choice__item choise__btn choice-btn icon-close">60% - 70% Off</button>
-						<button class="choice__item choise__btn clear-btn icon-close">Clear all
+						<button class="choice__item choice-btn icon-close">Accessories</button>
+						<button class="choice__item choice-btn icon-close">28</button>
+						<button class="choice__item choice-btn icon-close">medium</button>
+						<button class="choice__item choice-btn icon-close">60% - 70% Off</button>
+						<button class="choice__item clear-btn">Clear all
 						</button>
 					</div>
 				</div>
-				<ul class="catalog__products  products__list" data-columns="4">
+				<ul class="catalog__products products__list" data-columns="4">
 					<li class="products__list-item">
 						<div class="products__img">
 							<img class="products__item-img" src="@img/products/products-1.jpg" alt="img">
@@ -82,7 +82,7 @@
 						</h3>
 						<p class="products__price">$80.00 – $125.00<span class="products__price-sale"></span></p>
 					</li>
-					<li class="products__list-item">
+					<li class="products__list-item products__list-item--sale">
 						<div class="products__img">
 							<img class="products__item-img" src="@img/products/products-5.jpg" alt="img">
 						</div>
@@ -93,7 +93,7 @@
 						</h3>
 						<p class="products__price">$59.50<span class="products__price-sale"></span></p>
 					</li>
-					<li class="products__list-item">
+					<li class="products__list-item products__list-item--sale">
 						<div class="products__img">
 							<img class="products__item-img" src="@img/products/products-6.jpg" alt="img">
 						</div>
@@ -154,7 +154,16 @@
 						<p class="products__price">$290.00<span class="products__price-sale"></span></p>
 					</li>
 				</ul>
+
+				<div class="pagination">
+					<button class="pagination__item pagination__item--prev icon-arrow" type="button">PREV</button>
+					<button class="pagination__item pagination__item--active" type="button">1</button>
+					<button class="pagination__item" type="button">2</button>
+					<button class="pagination__item" type="button">3</button>
+					<button class="pagination__item pagination__item--next icon-arrow" type="button">NEXT</button>
+				</div>
 			</div>
+
 		</div>
 
 	</div>
