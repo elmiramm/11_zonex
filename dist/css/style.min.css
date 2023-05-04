@@ -1376,6 +1376,7 @@ button.active-link:hover {
   font-weight: 700;
   text-transform: uppercase;
   line-height: 1;
+  cursor: pointer;
 }
 .filter__item-bottom {
   display: none;

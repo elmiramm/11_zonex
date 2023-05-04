@@ -327,23 +327,20 @@ window.onload = function () {
 			}
 		}
 
-		if (targetElement.classList.contains('filter__toggle') || targetElement.closest('.filter__toggle')) {
+		if (targetElement.classList.contains('filter__toggle') || targetElement.closest('.filter__toggle') || targetElement.classList.contains('filter__item-title')) {
 			const closestFilterItem = targetElement.closest('.filter__item');
-			if (targetElement.classList.contains('icon-minus') || targetElement.closest('.icon-minus')) {
-				const minus = targetElement.closest('icon-minus') || targetElement;
-				minus.classList.remove('icon-minus');
-				minus.classList.add('icon-plus');
+			const filterToggle = closestFilterItem.querySelector('.filter__toggle');
+			if (filterToggle.classList.contains('icon-minus')) {
+				filterToggle.classList.remove('icon-minus');
+				filterToggle.classList.add('icon-plus');
 				closestFilterItem.querySelector('.filter__item-bottom').classList.remove("filter__item-bottom--open");
 			} else {
-				const plus = targetElement.closest('icon-plus') || targetElement;
-				plus.classList.remove('icon-plus');
-				plus.classList.add('icon-minus');
+				filterToggle.classList.remove('icon-plus');
+				filterToggle.classList.add('icon-minus');
 				closestFilterItem.querySelector('.filter__item-bottom').classList.add("filter__item-bottom--open");
 			}
 		}
 		//----------Filter-End----------
-
-
 	}
 	//------Действия-при-кликах-End-------------------------------------------------------------
 
