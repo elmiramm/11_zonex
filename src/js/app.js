@@ -264,7 +264,6 @@ window.onload = function () {
 	function documentActions(e) {
 		const targetElement = e.target;
 
-
 		//------------Close/Open-rightsite-menu-------------
 		if (targetElement.classList.contains('header__btn') || targetElement.closest('.header__btn')) {
 			document.querySelector(".rightsite-menu").classList.remove('rightsite-menu--close');
@@ -344,4 +343,30 @@ window.onload = function () {
 	}
 	//------Действия-при-кликах-End-------------------------------------------------------------
 
+
+	// ----чекбоксы------ 
+	const catalogFilter = document.querySelector('.catalog__filter');
+	catalogFilter.querySelectorAll('.count').forEach(count => {
+		if (count.textContent === '0') {
+			count.style.visibility = 'hidden';
+		}
+	});
+	catalogFilter.addEventListener('change', (event) => {
+		const changedElement = event.target;
+		const closestFilter = changedElement.closest('.filter__item');
+		let checkedInputCounter = 0;
+		closestFilter.querySelectorAll('.custom-checkbox__input').forEach(item => {
+			if (item.checked === true) {
+				checkedInputCounter += 1;
+			}
+		});
+		const caption = closestFilter.querySelector('.filter__item-caption .count');
+		caption.innerHTML = checkedInputCounter;
+		if (caption.textContent !== "0") {
+			caption.style.visibility = 'visible';
+		} else {
+			caption.style.visibility = 'hidden';
+		}
+	});
+	// ----чекбоксы-End------
 }
