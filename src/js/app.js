@@ -361,12 +361,42 @@ window.onload = function () {
 			}
 		});
 		const caption = closestFilter.querySelector('.filter__item-caption .count');
+		const clearBtn = closestFilter.querySelector('.count-clear-btn');
 		caption.innerHTML = checkedInputCounter;
 		if (caption.textContent !== "0") {
+			let tagContent = caption.textContent;
 			caption.style.visibility = 'visible';
+			caption.addEventListener('mouseover', () => {
+				caption.style.visibility = 'visible';
+				clearBtn.style.visibility = 'visible';
+				clearBtn.style.opacity = 1;
+				caption.classList.add('icon-close');
+				caption.innerHTML = "";
+				caption.addEventListener('click', () => {
+					closestFilter.querySelectorAll('.custom-checkbox__input').forEach(input => {
+						input.checked = false;
+					});
+					tagContent = '0';
+					caption.innerHTML = tagContent;
+					caption.style.visibility = 'hidden';
+					clearBtn.style.visibility = 'hidden';
+					clearBtn.style.opacity = 0;
+				});
+			});
+			caption.addEventListener('mouseout', () => {
+				caption.classList.remove('icon-close');
+				caption.innerHTML = tagContent;
+				if (tagContent !== '0') {
+					caption.style.visibility = 'visible';
+				}
+				clearBtn.style.visibility = 'hidden';
+				clearBtn.style.opacity = 0;
+			})
+
 		} else {
 			caption.style.visibility = 'hidden';
 		}
 	});
+
 	// ----чекбоксы-End------
 }

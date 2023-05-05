@@ -90,6 +90,27 @@
 		line-height: 1;
 		margin-bottom: 20px;
 	}
+	.count {
+		margin-right: 0px;
+		&.icon-close::before {
+			font-size: 10px;
+		}
+		&:hover {
+			& + .count-clear-btn {
+				visibility: visible;
+				opacity: 1;
+				transition: all 0.3s ease;
+			}
+		}
+	}
+	.count-clear-btn {
+		opacity: 0;
+		visibility: hidden;
+		color: #454545;
+		font-size: 13px;
+		line-height: 1;
+		transition: all 0.3s ease;
+	}
 }
 
 .custom-checkbox {
