@@ -340,6 +340,36 @@ window.onload = function () {
 			}
 		}
 		//----------Filter-End----------
+
+
+
+		//----------Click on "Column number" - block------------
+		if (targetElement.classList.contains('props__column-button') || targetElement.firstChild.classList.contains('.props__column-button')) {
+			const catalogProducts = document.querySelector('.catalog__products');
+			const propsAllButtons = document.querySelectorAll('.props__column-button');
+			let beforeStatus = catalogProducts.dataset.columns;
+			const currentStatus = targetElement.dataset.column;
+
+			if (beforeStatus !== currentStatus) {
+				propsAllButtons.forEach(button => {
+					if (button.classList.contains('props__column-button--active')) {
+						button.classList.remove('props__column-button--active');
+					}
+				})
+				catalogProducts.dataset.columns = currentStatus;
+				beforeStatus = currentStatus;
+				propsAllButtons.forEach(button => {
+					if (button.textContent === beforeStatus) {
+						button.classList.add('props__column-button--active');
+					}
+				})
+			}
+			console.log(beforeStatus, currentStatus);
+		}
+		//----------Click on "Column number" - block-End-----------
+
+
+
 	}
 	//------Действия-при-кликах-End-------------------------------------------------------------
 
