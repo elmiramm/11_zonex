@@ -344,7 +344,7 @@ window.onload = function () {
 
 
 		//----------Click on "Column number" - block------------
-		if (targetElement.classList.contains('props__column-button') || targetElement.firstChild.classList.contains('.props__column-button')) {
+		if (targetElement.classList.contains('props__column-button')) {
 			const catalogProducts = document.querySelector('.catalog__products');
 			const propsAllButtons = document.querySelectorAll('.props__column-button');
 			let beforeStatus = catalogProducts.dataset.columns;
@@ -364,7 +364,6 @@ window.onload = function () {
 					}
 				})
 			}
-			console.log(beforeStatus, currentStatus);
 		}
 		//----------Click on "Column number" - block-End-----------
 
@@ -385,11 +384,41 @@ window.onload = function () {
 		const changedElement = event.target;
 		const closestFilter = changedElement.closest('.filter__item');
 		let checkedInputCounter = 0;
+		let inputCounter = closestFilter.querySelectorAll('.custom-checkbox__input').length;
+
+		const customCheckbox = changedElement.closest('.custom-checkbox');
+		const checkBoxLabel = customCheckbox.querySelector('.custom-checkbox__text');
+
+		if (checkBoxLabel) {
+			if (checkBoxLabel.textContent === 'All categories' && changedElement.checked) {
+				closestFilter.querySelectorAll('.custom-checkbox__input').forEach(item => {
+					item.checked = true;
+				})
+			}
+		}
+		let allCategoriesInput = 'no-label';
+
+		const allFilterItemLabels = closestFilter.querySelectorAll('.custom-checkbox__text');
+		if (allFilterItemLabels.length !== 0) {
+			allFilterItemLabels.forEach(label => {
+				if (label.textContent === 'All categories') {
+					allCategoriesInput = label.closest('.custom-checkbox').querySelector('.custom-checkbox__input');
+				}
+			});
+		}
+
 		closestFilter.querySelectorAll('.custom-checkbox__input').forEach(item => {
 			if (item.checked === true) {
 				checkedInputCounter += 1;
 			}
 		});
+
+		if ((allCategoriesInput.checked === true) && (checkedInputCounter !== inputCounter)) {
+			console.log('coming');
+			console.log(allCategoriesInput);
+			allCategoriesInput.checked = false;
+		}
+
 		const caption = closestFilter.querySelector('.filter__item-caption .count');
 		const clearBtn = closestFilter.querySelector('.count-clear-btn');
 		caption.innerHTML = checkedInputCounter;
