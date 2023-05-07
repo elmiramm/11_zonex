@@ -375,87 +375,101 @@ window.onload = function () {
 
 	// ----чекбоксы------ 
 	const catalogFilter = document.querySelector('.catalog__filter');
-	catalogFilter.querySelectorAll('.count').forEach(count => {
-		if (count.textContent === '0') {
-			count.style.visibility = 'hidden';
-		}
-	});
-	catalogFilter.addEventListener('change', (event) => {
-		const changedElement = event.target;
-		const closestFilter = changedElement.closest('.filter__item');
-		let checkedInputCounter = 0;
-		let inputCounter = closestFilter.querySelectorAll('.custom-checkbox__input').length;
 
-		const customCheckbox = changedElement.closest('.custom-checkbox');
-		const checkBoxLabel = customCheckbox.querySelector('.custom-checkbox__text');
-
-		if (checkBoxLabel) {
-			if (checkBoxLabel.textContent === 'All categories' && changedElement.checked) {
-				closestFilter.querySelectorAll('.custom-checkbox__input').forEach(item => {
-					item.checked = true;
-				})
-			}
-		}
-		let allCategoriesInput = 'no-label';
-
-		const allFilterItemLabels = closestFilter.querySelectorAll('.custom-checkbox__text');
-		if (allFilterItemLabels.length !== 0) {
-			allFilterItemLabels.forEach(label => {
-				if (label.textContent === 'All categories') {
-					allCategoriesInput = label.closest('.custom-checkbox').querySelector('.custom-checkbox__input');
-				}
-			});
-		}
-
-		closestFilter.querySelectorAll('.custom-checkbox__input').forEach(item => {
-			if (item.checked === true) {
-				checkedInputCounter += 1;
+	if (catalogFilter) {
+		catalogFilter.querySelectorAll('.count').forEach(count => {
+			if (count.textContent === '0') {
+				count.style.visibility = 'hidden';
 			}
 		});
 
-		if ((allCategoriesInput.checked === true) && (checkedInputCounter !== inputCounter)) {
-			console.log('coming');
-			console.log(allCategoriesInput);
-			allCategoriesInput.checked = false;
-		}
+		catalogFilter.addEventListener('change', (event) => {
+			const target = event.target;
+			const closestFilter = target.closest('.filter__item');
+			const inputsArr = closestFilter.querySelectorAll('.custom-checkbox__input');
+			let checkedInputCounter = 0;
+			let inputCounter = inputsArr.length;
 
-		const caption = closestFilter.querySelector('.filter__item-caption .count');
-		const clearBtn = closestFilter.querySelector('.count-clear-btn');
-		caption.innerHTML = checkedInputCounter;
-		if (caption.textContent !== "0") {
-			let tagContent = caption.textContent;
-			caption.style.visibility = 'visible';
-			caption.addEventListener('mouseover', () => {
-				caption.style.visibility = 'visible';
-				clearBtn.style.visibility = 'visible';
-				clearBtn.style.opacity = 1;
-				caption.classList.add('icon-close');
-				caption.innerHTML = "";
-				caption.addEventListener('click', () => {
+			inputsArr.forEach(input => {
+				if (input.checked) {
+					checkedInputCounter += 1;
+				}
+			});
+
+			// если фильтры содержат чекбокс с опцией выделить все позиции;
+			const allInput = closestFilter.querySelector('.all');
+			if (allInput) {
+				if (target === allInput && allInput.checked) {
+					inputsArr.forEach(input => {
+						if (input !== allInput && !input.checked) {
+							input.checked = true;
+							checkedInputCounter += 1;
+						}
+					});
+				}
+				if (target === allInput && !allInput.checked && checkedInputCounter === 9) {
 					closestFilter.querySelectorAll('.custom-checkbox__input').forEach(input => {
 						input.checked = false;
+						if (input !== allInput) {
+							checkedInputCounter -= 1;
+						}
 					});
-					tagContent = '0';
+				}
+				if (target !== allInput && allInput.checked) {
+					if (checkedInputCounter !== 10) {
+						allInput.checked = false;
+						checkedInputCounter -= 1;
+					}
+				}
+				if (target !== allInput && !allInput.checked && checkedInputCounter === 9) {
+					allInput.checked = true;
+					checkedInputCounter += 1;
+				}
+			}
+			// если фильтры содержат чекбокс с опцией выделить все позиции;
+
+
+			//-----------Clear-btn-----------
+			const caption = closestFilter.querySelector('.filter__item-caption .count');
+			const clearBtn = closestFilter.querySelector('.count-clear-btn');
+			caption.innerHTML = checkedInputCounter;
+			if (caption.textContent !== "0") {
+				let tagContent = caption.textContent;
+				caption.style.visibility = 'visible';
+				caption.addEventListener('mouseover', () => {
+					caption.style.visibility = 'visible';
+					clearBtn.style.visibility = 'visible';
+					clearBtn.style.opacity = 1;
+					caption.classList.add('icon-close');
+					caption.innerHTML = "";
+					caption.addEventListener('click', () => {
+						closestFilter.querySelectorAll('.custom-checkbox__input').forEach(input => {
+							input.checked = false;
+						});
+						tagContent = '0';
+						caption.innerHTML = tagContent;
+						caption.style.visibility = 'hidden';
+						clearBtn.style.visibility = 'hidden';
+						clearBtn.style.opacity = 0;
+					});
+				});
+				caption.addEventListener('mouseout', () => {
+					caption.classList.remove('icon-close');
 					caption.innerHTML = tagContent;
-					caption.style.visibility = 'hidden';
+					if (tagContent !== '0') {
+						caption.style.visibility = 'visible';
+					}
 					clearBtn.style.visibility = 'hidden';
 					clearBtn.style.opacity = 0;
-				});
-			});
-			caption.addEventListener('mouseout', () => {
-				caption.classList.remove('icon-close');
-				caption.innerHTML = tagContent;
-				if (tagContent !== '0') {
-					caption.style.visibility = 'visible';
-				}
-				clearBtn.style.visibility = 'hidden';
-				clearBtn.style.opacity = 0;
-			})
+				})
 
-		} else {
-			caption.style.visibility = 'hidden';
-		}
-	});
+			} else {
+				caption.style.visibility = 'hidden';
+			}
+		});
+		//-----------Clear-btn-End----------
 
-	// ----чекбоксы-End------
+		// ----чекбоксы-End------
+	}
+
 }
