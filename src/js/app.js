@@ -470,8 +470,26 @@ window.onload = function () {
 					caption.classList.add('icon-close');
 					caption.innerHTML = "";
 					caption.addEventListener('click', () => {
+
 						closestFilter.querySelectorAll('.custom-checkbox__input').forEach(input => {
 							input.checked = false;
+
+							const deletedButtonText = input.closest('.custom-checkbox').querySelector('.checkbox-content').textContent;
+							let allChouceBlockItems = catalogChoice.querySelectorAll('.choice__item');
+							if (allChouceBlockItems.length !== 0) {
+								allChouceBlockItems.forEach(button => {
+									if (button.textContent === deletedButtonText) {
+										button.remove();
+										allChouceBlockItems = catalogChoice.querySelectorAll('.choice__item');
+										if (allChouceBlockItems.length === 1) {
+											catalogChoice.querySelector('.clear-btn').remove();
+										}
+									}
+								});
+							}
+
+
+
 						});
 						tagContent = '0';
 						caption.innerHTML = tagContent;
