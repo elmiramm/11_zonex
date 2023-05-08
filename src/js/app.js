@@ -366,9 +366,6 @@ window.onload = function () {
 			}
 		}
 		//----------Click on "Column number" - block-End-----------
-
-
-
 	}
 	//------Действия-при-кликах-End-------------------------------------------------------------
 
@@ -388,7 +385,6 @@ window.onload = function () {
 			const closestFilter = target.closest('.filter__item');
 			const inputsArr = closestFilter.querySelectorAll('.custom-checkbox__input');
 			let checkedInputCounter = 0;
-			let inputCounter = inputsArr.length;
 
 			inputsArr.forEach(input => {
 				if (input.checked) {
@@ -426,8 +422,39 @@ window.onload = function () {
 					checkedInputCounter += 1;
 				}
 			}
-			// если фильтры содержат чекбокс с опцией выделить все позиции;
+			// если фильтры содержат чекбокс с опцией выделить все позиции-End---;
 
+			const createChoiceItem = (content) => {
+				return (`<button class="choice__item choice-btn icon-close">${content}</button>`);
+			}
+
+			const catalogChoice = document.querySelector('.catalog__choice');
+			const allInputs = document.querySelector('.catalog__filter').querySelectorAll('.custom-checkbox__input');
+			const allCheckedInputs = [];
+			const checkboxAll = catalogFilter.querySelector('.all');
+			catalogChoice.innerHTML = '';
+
+			allInputs.forEach(input => {
+				if (checkboxAll.checked) {
+					if (!(input.closest('.filter__item').querySelector('.all')) && input.checked) {
+						allCheckedInputs.push(input);
+					}
+				} else {
+					if (input.checked) {
+						allCheckedInputs.push(input);
+					}
+				}
+			})
+
+			if (allCheckedInputs.length) {
+				catalogChoice.innerHTML = `<button class="choice__item clear-btn">Clear all
+				</button>`;
+				catalogChoice.style.display = 'flex';
+				allCheckedInputs.forEach(input => {
+					const content = input.closest('.custom-checkbox').querySelector('.checkbox-content').textContent;
+					catalogChoice.insertAdjacentHTML('afterbegin', createChoiceItem(content));
+				})
+			}
 
 			//-----------Clear-btn-----------
 			const caption = closestFilter.querySelector('.filter__item-caption .count');
