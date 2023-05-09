@@ -259,7 +259,6 @@ window.onload = function () {
 
 	//-------Change-puched-blog-content-End----------------------------------------------
 
-
 	//------Действия-при-кликах----------------------------------------------------------
 	function documentActions(e) {
 		const targetElement = e.target;
@@ -366,14 +365,24 @@ window.onload = function () {
 			}
 		}
 		//----------Click on "Column number" - block-End-----------
+
+
+
+
 	}
 	//------Действия-при-кликах-End-------------------------------------------------------------
 
 
 	// ----чекбоксы------ 
 	const catalogFilter = document.querySelector('.catalog__filter');
+	const catalogChoice = document.querySelector('.catalog__choice');
 
-	if (catalogFilter) {
+	const createChoiceItem = (content) => {
+		return (`<button class="choice__item choice-btn icon-close">${content}</button>`);
+	}
+
+	if (catalogFilter && catalogChoice) {
+
 		catalogFilter.querySelectorAll('.count').forEach(count => {
 			if (count.textContent === '0') {
 				count.style.visibility = 'hidden';
@@ -382,6 +391,9 @@ window.onload = function () {
 
 		catalogFilter.addEventListener('change', (event) => {
 			const target = event.target;
+
+
+			// **-------------РАБОТАЕМ ВНУТРИ ОДНОГО ФИЛЬТРА, ГДЕ БЫЛ CHECK------------
 			const closestFilter = target.closest('.filter__item');
 			const inputsArr = closestFilter.querySelectorAll('.custom-checkbox__input');
 			let checkedInputCounter = 0;
@@ -424,12 +436,12 @@ window.onload = function () {
 			}
 			// если фильтры содержат чекбокс с опцией выделить все позиции-End---;
 
-			const createChoiceItem = (content) => {
-				return (`<button class="choice__item choice-btn icon-close">${content}</button>`);
-			}
+			// **-------------РАБОТАЕМ ВНУТРИ ОДНОГО ФИЛЬТРА, ГДЕ БЫЛ CHECK-END-----------
 
-			const catalogChoice = document.querySelector('.catalog__choice');
-			const allInputs = document.querySelector('.catalog__filter').querySelectorAll('.custom-checkbox__input');
+
+
+			//  !!-------------РАБОТАЕМ ВНУТРИ ВСЕГО КАТАЛОГА (ПО ВСЕМ ФИЛЬТРАМ)------------
+			const allInputs = catalogFilter.querySelectorAll('.custom-checkbox__input');
 			const allCheckedInputs = [];
 			const checkboxAll = catalogFilter.querySelector('.all');
 			catalogChoice.innerHTML = '';
@@ -444,17 +456,33 @@ window.onload = function () {
 						allCheckedInputs.push(input);
 					}
 				}
-			})
+			});
 
 			if (allCheckedInputs.length) {
-				catalogChoice.innerHTML = `<button class="choice__item clear-btn">Clear all
+				catalogChoice.innerHTML = `<button class="choice__item clear-btn choice-clear-btn">Clear all
 				</button>`;
 				catalogChoice.style.display = 'flex';
 				allCheckedInputs.forEach(input => {
 					const content = input.closest('.custom-checkbox').querySelector('.checkbox-content').textContent;
 					catalogChoice.insertAdjacentHTML('afterbegin', createChoiceItem(content));
+				});
+				catalogChoice.addEventListener('click', (e) => {
+					const clickedElement = e.target;
+					if (clickedElement.classList.contains('choice-clear-btn')) {
+						catalogChoice.innerHTML = '';
+						allCheckedInputs.forEach(input => {
+							input.checked = false;
+							const count = input.closest('.filter__item').querySelector('.count');
+							count.textContent = 0;
+							count.style.visibility = 'hidden';
+							count.classList.remove('icon-close');
+							count.innerHTML = "";
+						})
+					}
+
 				})
 			}
+			//  !!-------------РАБОТАЕМ ВНУТРИ ВСЕГО КАТАЛОГА (ПО ВСЕМ ФИЛЬТРАМ)-END-----------
 
 			//-----------Clear-btn-----------
 			const caption = closestFilter.querySelector('.filter__item-caption .count');
@@ -464,39 +492,45 @@ window.onload = function () {
 				let tagContent = caption.textContent;
 				caption.style.visibility = 'visible';
 				caption.addEventListener('mouseover', () => {
-					caption.style.visibility = 'visible';
-					clearBtn.style.visibility = 'visible';
-					clearBtn.style.opacity = 1;
-					caption.classList.add('icon-close');
-					caption.innerHTML = "";
-					caption.addEventListener('click', () => {
-
-						closestFilter.querySelectorAll('.custom-checkbox__input').forEach(input => {
-							input.checked = false;
-
-							const deletedButtonText = input.closest('.custom-checkbox').querySelector('.checkbox-content').textContent;
-							let allChouceBlockItems = catalogChoice.querySelectorAll('.choice__item');
-							if (allChouceBlockItems.length !== 0) {
-								allChouceBlockItems.forEach(button => {
-									if (button.textContent === deletedButtonText) {
-										button.remove();
-										allChouceBlockItems = catalogChoice.querySelectorAll('.choice__item');
-										if (allChouceBlockItems.length === 1) {
-											catalogChoice.querySelector('.clear-btn').remove();
-										}
-									}
-								});
-							}
-
-
-
-						});
-						tagContent = '0';
-						caption.innerHTML = tagContent;
+					if (checkedInputCounter === 0) {
 						caption.style.visibility = 'hidden';
 						clearBtn.style.visibility = 'hidden';
 						clearBtn.style.opacity = 0;
-					});
+						caption.classList.remove('icon-close');
+						caption.innerHTML = "";
+					} else {
+						caption.style.visibility = 'visible';
+						clearBtn.style.visibility = 'visible';
+						clearBtn.style.opacity = 1;
+						caption.classList.add('icon-close');
+						caption.innerHTML = "";
+						caption.addEventListener('click', () => {
+
+							closestFilter.querySelectorAll('.custom-checkbox__input').forEach(input => {
+								input.checked = false;
+
+								const deletedButtonText = input.closest('.custom-checkbox').querySelector('.checkbox-content').textContent;
+								let allChouceBlockItems = catalogChoice.querySelectorAll('.choice__item');
+								if (allChouceBlockItems.length !== 0) {
+									allChouceBlockItems.forEach(button => {
+										if (button.textContent === deletedButtonText) {
+											button.remove();
+											allChouceBlockItems = catalogChoice.querySelectorAll('.choice__item');
+											if (allChouceBlockItems.length === 1) {
+												catalogChoice.querySelector('.clear-btn').remove();
+											}
+										}
+									});
+								}
+							});
+							tagContent = '0';
+							caption.innerHTML = tagContent;
+							caption.style.visibility = 'hidden';
+							clearBtn.style.visibility = 'hidden';
+							clearBtn.style.opacity = 0;
+						});
+					}
+
 				});
 				caption.addEventListener('mouseout', () => {
 					caption.classList.remove('icon-close');
