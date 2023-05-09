@@ -378,7 +378,10 @@ window.onload = function () {
 	const catalogChoice = document.querySelector('.catalog__choice');
 
 	const createChoiceItem = (content) => {
-		return (`<button class="choice__item choice-btn icon-close">${content}</button>`);
+		return (`<div class="choice__item choice-btn">
+		<span class="icon-close"></span>
+		<span class="choice-btn__name">${content}</span>
+		</div>`);
 	}
 
 	if (catalogFilter && catalogChoice) {
@@ -459,7 +462,8 @@ window.onload = function () {
 			});
 
 			if (allCheckedInputs.length) {
-				catalogChoice.innerHTML = `<button class="choice__item clear-btn choice-clear-btn">Clear all
+				catalogChoice.innerHTML = `<button class="choice__item clear-btn choice-clear-btn">
+				<span class="choice-btn__name">Clear all</span>
 				</button>`;
 				catalogChoice.style.display = 'flex';
 				allCheckedInputs.forEach(input => {
@@ -468,7 +472,7 @@ window.onload = function () {
 				});
 				catalogChoice.addEventListener('click', (e) => {
 					const clickedElement = e.target;
-					if (clickedElement.classList.contains('choice-clear-btn')) {
+					if (clickedElement.classList.contains('choice-clear-btn') || clickedElement.closest('.choice-clear-btn')) {
 						catalogChoice.innerHTML = '';
 						allCheckedInputs.forEach(input => {
 							input.checked = false;
@@ -477,6 +481,38 @@ window.onload = function () {
 							count.style.visibility = 'hidden';
 							count.classList.remove('icon-close');
 							count.innerHTML = "";
+						})
+					}
+					if (clickedElement.classList.contains('icon-close') || clickedElement.closest('.icon-close')) {
+						const btnContent = clickedElement.closest('.choice-btn').querySelector('.choice-btn__name').textContent;
+						allCheckedInputs.forEach(input => {
+							if (input.closest('.custom-checkbox').querySelector('.checkbox-content').textContent === btnContent) {
+								input.checked = false;
+								let ctr = 0;
+								const filter = input.closest('.filter__item');
+								filter.querySelectorAll('.custom-checkbox__input').forEach(item => {
+									if (item.checked) {
+										ctr += 1;
+									}
+								});
+								if (ctr !== 0) {
+									filter.querySelector('.count').textContent = ctr;
+								}
+
+								const deletedButtonText = input.closest('.custom-checkbox').querySelector('.checkbox-content').textContent;
+								let allChouceBlockItems = catalogChoice.querySelectorAll('.choice__item');
+								if (allChouceBlockItems.length !== 0) {
+									allChouceBlockItems.forEach(button => {
+										if (button.querySelector('.choice-btn__name').textContent === deletedButtonText) {
+											button.remove();
+											allChouceBlockItems = catalogChoice.querySelectorAll('.choice__item');
+											if (allChouceBlockItems.length === 1) {
+												catalogChoice.querySelector('.clear-btn').remove();
+											}
+										}
+									});
+								}
+							}
 						})
 					}
 
@@ -513,7 +549,7 @@ window.onload = function () {
 								let allChouceBlockItems = catalogChoice.querySelectorAll('.choice__item');
 								if (allChouceBlockItems.length !== 0) {
 									allChouceBlockItems.forEach(button => {
-										if (button.textContent === deletedButtonText) {
+										if (button.querySelector('.choice-btn__name').textContent === deletedButtonText) {
 											button.remove();
 											allChouceBlockItems = catalogChoice.querySelectorAll('.choice__item');
 											if (allChouceBlockItems.length === 1) {

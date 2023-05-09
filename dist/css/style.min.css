@@ -1276,6 +1276,9 @@ button.active-link:hover {
   color: #fff;
   background-color: #151515;
 }
+.choice-btn .icon-close::before:hover {
+  color: #ff1847;
+}
 
 .clear-btn {
   line-height: 1.5;
