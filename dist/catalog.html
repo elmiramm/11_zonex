@@ -536,7 +536,7 @@
 								</li>
 							</ul>
 						</div>
-						<div class="custom-select">
+						<div class="custom-select" tabindex="0">
 							<div class="custom-select__top icon-arrow">Sort by latest</div>
 							<div class="custom-select__dropdown">
 								<ul class="custom-select__list">
@@ -671,13 +671,13 @@
 					</li>
 				</ul>
 
-				<div class="pagination">
-					<button class="pagination__item pagination__item--prev icon-arrow" type="button">PREV</button>
-					<button class="pagination__item pagination__item--active" type="button">1</button>
-					<button class="pagination__item" type="button">2</button>
-					<button class="pagination__item" type="button">3</button>
-					<button class="pagination__item pagination__item--next icon-arrow" type="button">NEXT</button>
-				</div>
+				<ul class="pagination">
+					<li class="pagination__item pagination__item--prev icon-arrow" type="button"><a href="#">PREV</a> </li>
+					<li class="pagination__item pagination__item--active" type="button"><a href="#">1</a></li>
+					<li class="pagination__item" type="button"><a href="#">2</a></li>
+					<li class="pagination__item" type="button"><a href="#">3</a></li>
+					<li class="pagination__item pagination__item--next icon-arrow" type="button"><a href="#">NEXT</a></li>
+				</ul>
 			</div>
 
 		</div>
@@ -714,23 +714,40 @@
 					<a href="#" class="copyright__link">Privacy Policy</a>
 				</li>
 			</ul>
-			<div class="currency">
-				<h4 class="currency__title"> Currency</h4>
-				<select name="" id="" class="currency__select">
-					<option value="">USD</option>
-					<option value="">RUB</option>
-				</select>
+			<div class="footer__selects">
+				<div class="footer__select currency">
+					<h4 class="footer__select-title currency__title"> Currency</h4>
+					<div class="currency__select custom-select" tabindex="0">
+						<div class="custom-select__top icon-arrow">RUB</div>
+						<div class="custom-select__dropdown">
+							<ul class="custom-select__list">
+								<li class="custom-select__item">RUB</li>
+								<li class="custom-select__item">USD</li>
+								<li class="custom-select__item">EUR</li>
+								<li class="custom-select__item">WON</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="footer__select language">
+					<h4 class="footer__select-title language__title"> Language</h4>
+					<div class="custom-select" tabindex="0">
+						<div class="custom-select__top icon-arrow">ENGLISH</div>
+						<div class="custom-select__dropdown">
+							<ul class="custom-select__list">
+								<li class="custom-select__item">ENGLISH</li>
+								<li class="custom-select__item">RUSSIAN</li>
+								<li class="custom-select__item">TATAR</li>
+								<li class="custom-select__item">KOREAN</li>
+							</ul>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="language">
-				<h4 class="language__title"> language</h4>
-				<select name="" id="" class="language__select">
-					<option value="">ENGLISH</option>
-					<option value="">RUSSIAN</option>
-					<option value="">TATAR</option>
-					<option value="">KOREAN</option>
-				</select>
-			</div>
+
 		</div>
+
 		<div class="footer__copyright">
 			<p class="footer__copyright-text">©2019 Zonex All rights reserved</p>
 			<div class="pay-block">

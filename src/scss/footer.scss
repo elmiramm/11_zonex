@@ -69,6 +69,11 @@
 		align-items: center;
 		justify-content: space-between;
 	}
+	&__selects {
+		display: flex;
+		gap: 60px;
+		align-items: center;
+	}
 }
 .copyright {
 	font-size: 13px;
@@ -107,6 +112,64 @@
 		&.icon-pinterest {
 			&:hover {
 				color: #D32F2F;
+			}
+		}
+	}
+}
+.footer__select {
+	font-size: 13px;
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	.custom-select__top {
+		border: none;
+		padding-bottom: 0;
+		&::before {
+			top: 50%;
+		}
+	}
+	&-title {
+		
+		line-height: 1;
+		color: $textColor;
+	}
+
+}
+
+.footer__copyright {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	padding: 17px 0;
+}
+.pay-block {
+	display: flex;
+	gap: 30px;
+	align-items: center;
+
+	color: #a8abac;
+
+	&__item {
+		cursor: pointer;
+		&:hover {
+			transition: all 0.3s ease;
+			color: $accentColor;
+		}
+		&.icon-mastercard {
+			&::before {
+				font-size: 22px;
+			}
+			
+		}
+		&.icon-visa {
+			&::before {
+				font-size: 30px;
+			}
+		}
+		&.icon-paypal-black {
+			&::before {
+				font-size: 20px;
 			}
 		}
 	}
