@@ -199,7 +199,19 @@ window.onload = function () {
 	//-------Active links on Page-End----------------------------------------------------
 
 
+	//--------selects----------
+	document.querySelectorAll('.custom-select').forEach(elem => {
+		elem.addEventListener("click", (e) => {
+			e.currentTarget.classList.toggle('custom-select--open');
 
+			if (e.target.classList.contains('custom-select__item')) {
+				let text = e.target.textContent;
+				e.currentTarget.querySelector('.custom-select__top').textContent = text;
+			}
+		})
+	});
+
+	//---------selects-End
 
 	//-------Change-puched-blog-content--------------------------------------------------
 	const purchedBlogData = [
@@ -256,7 +268,6 @@ window.onload = function () {
 		changePurchedBlogContent();
 		setInterval(changePurchedBlogContent, delay);
 	}
-
 	//-------Change-puched-blog-content-End----------------------------------------------
 
 	//------Действия-при-кликах----------------------------------------------------------
@@ -365,8 +376,6 @@ window.onload = function () {
 			}
 		}
 		//----------Click on "Column number" - block-End-----------
-
-
 
 
 	}
