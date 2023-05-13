@@ -313,6 +313,9 @@
 			}
 		}
 	}
+	.footer__copyright {
+		flex-direction: column-reverse;
+	}
 }
 
 @media (max-width: 520px) {
@@ -375,6 +378,10 @@
 			padding: 6px 6px;
 		}
 	}
+	.footer__selects {
+		gap: 20px;
+		flex-direction: column;
+	}
 }
 @media (max-width: 380px) {
 	.user {
@@ -402,6 +409,9 @@
 		&__banner {
 			min-height: 135px;
 		}
+	}
+	.pay-block {
+		gap: 15px;
 	}
 }
 

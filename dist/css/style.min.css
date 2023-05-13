@@ -1688,7 +1688,6 @@ input[type=range]::-moz-slider-thumb {
   display: block;
 }
 .custom-select__top {
-  padding-right: 32px;
   padding-bottom: 15px;
   font-size: 10px;
   line-height: 1;
@@ -2000,6 +1999,9 @@ input[type=range]::-moz-slider-thumb {
   .filter__list--discount {
     columns: 1;
   }
+  .footer__copyright {
+    flex-direction: column-reverse;
+  }
 }
 @media (max-width: 520px) {
   .shops__banner {
@@ -2050,6 +2052,10 @@ input[type=range]::-moz-slider-thumb {
   .catalog .pagination__item {
     padding: 6px 6px;
   }
+  .footer__selects {
+    gap: 20px;
+    flex-direction: column;
+  }
 }
 @media (max-width: 380px) {
   .user {
@@ -2075,5 +2081,8 @@ input[type=range]::-moz-slider-thumb {
   }
   .shops__banner {
     min-height: 135px;
+  }
+  .pay-block {
+    gap: 15px;
   }
 }
