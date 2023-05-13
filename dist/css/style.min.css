@@ -644,6 +644,10 @@ select {
   padding-bottom: 30px;
   border-bottom: 1px solid #eee;
 }
+.breadcrumbs .card-breadcrumbs {
+  padding-top: 90px;
+  padding-bottom: 15px;
+}
 .breadcrumbs__list {
   display: flex;
   align-items: center;

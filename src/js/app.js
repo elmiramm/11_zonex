@@ -182,6 +182,13 @@ window.onload = function () {
 			}
 		});
 	}
+	if (page.classList.contains("card-page")) {
+		document.querySelectorAll('.menu__list-link').forEach(elem => {
+			if (elem.textContent === "Shop") {
+				elem.classList.add('active-link');
+			}
+		});
+	}
 	// if (page.classList.contains("contact")) {
 	// 	const contact = document.querySelectorAll('.menu__list-link').forEach(elem => {
 	// 		if (elem.textContent === "Contact") {

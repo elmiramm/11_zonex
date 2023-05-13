@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include("html/head.html", {
+title: "Zonex | Shop"
+})
+
+<body>
+	<div class="wrapper">
+		@@include("html/header.html", {
+		className: "container-narrow",
+		closeClass:"",
+		})
+
+		<main class="page card-page">
+
+			@@include("html/breadcrumbs.html", {
+			item: '<li class="breadcrumbs__list-item"><a class="breadcrumbs__list-link" href="#">man</a></li>',
+			item2: '<li class="breadcrumbs__list-item"><a class="breadcrumbs__list-link" href="#">jacket</a></li>',
+
+			item3:'<li class="breadcrumbs__list-item"><a href="#" class="breadcrumbs__list-link">',
+					item4: 'Band-collarpopovertunic</a></li>',
+			className: "card-breadcrumbs container-narrow",
+			})
+		</main>
+
+		@@include("html/footer.html")
+	</div>
+
+
+	<script src="js/app.min.js"></script>
+</body>
+
+</html>
