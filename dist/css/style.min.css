@@ -1730,14 +1730,6 @@ input[type=range]::-moz-slider-thumb {
     justify-content: center;
   }
 }
-@media (max-width: 1100px) {
-  .shops__banner {
-    min-height: 250px;
-  }
-  .shops__banner-title {
-    font-size: 35px;
-  }
-}
 @media (max-width: 1350px) {
   .intro__slider-content {
     margin-left: 10%;
@@ -1751,6 +1743,53 @@ input[type=range]::-moz-slider-thumb {
   }
   .banners__item-title {
     font-size: 25px;
+  }
+}
+@media (max-width: 1200px) {
+  .catalog__inner {
+    flex-direction: column;
+  }
+  .catalog__content {
+    max-width: 100%;
+  }
+  .catalog .props__column {
+    display: none;
+  }
+  .catalog [data-columns="4"] .products__list-item {
+    width: 30.5%;
+  }
+  .catalog [data-columns="4"] .products__img {
+    height: 380px;
+  }
+  .filter {
+    width: 100%;
+  }
+  .filter__item {
+    padding: 20px 0;
+  }
+  .filter__item--price {
+    width: 270px;
+    margin: 0 auto;
+  }
+  .filter__list {
+    columns: 5;
+  }
+  .filter__list--colors {
+    columns: 10;
+  }
+  .filter__list--size {
+    columns: 10;
+  }
+  .filter__list--discount {
+    columns: 4;
+  }
+}
+@media (max-width: 1100px) {
+  .shops__banner {
+    min-height: 250px;
+  }
+  .shops__banner-title {
+    font-size: 35px;
   }
 }
 @media (max-width: 991.98px) {
@@ -1942,6 +1981,25 @@ input[type=range]::-moz-slider-thumb {
   .advertise-banner {
     padding: 15px 10px;
   }
+  .catalog [data-columns="4"] .products__list-item {
+    width: 48.5%;
+    height: 100%;
+  }
+  .catalog [data-columns="4"] .products__img {
+    height: 80%;
+  }
+  .filter__list {
+    columns: 2;
+  }
+  .filter__list--colors {
+    columns: 4;
+  }
+  .filter__list--size {
+    columns: 3;
+  }
+  .filter__list--discount {
+    columns: 1;
+  }
 }
 @media (max-width: 520px) {
   .shops__banner {
@@ -1985,6 +2043,12 @@ input[type=range]::-moz-slider-thumb {
     height: 410px;
     width: 300px;
     margin: 0 auto;
+  }
+  .catalog [data-columns="4"] .products__list-item {
+    width: 100%;
+  }
+  .catalog .pagination__item {
+    padding: 6px 6px;
   }
 }
 @media (max-width: 380px) {
