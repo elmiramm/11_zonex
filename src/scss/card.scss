@@ -27,4 +27,8 @@
 	&__link--active {
 		color: $mainTextColor;
 	}
+	.slider-card {
+		display: flex;
+		gap: 15px;
+	}
 }

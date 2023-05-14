@@ -36,3 +36,63 @@
 		background-color: $mainTextColor;
 	}
 }
+
+.slider-card {
+	.swiper-pagination-bullets {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+	}
+	.swiper-pagination-bullet {
+		flex: 0 0 auto;
+		width: 70px;
+		height: 90px;
+		background-color: $accentColor;
+		&:first-child {
+			background-image: url(../img/card-mini/card-mini-1.jpg);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+		}
+		&:nth-child(2) {
+			background-image: url(../img/card-mini/card-mini-2.jpg);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+		}
+		&:nth-child(3) {
+			background-image: url(../img/card-mini/card-mini-3.jpg);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+		}
+		&:nth-child(4) {
+			background-image: url(../img/card-mini/card-mini-4.jpg);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+		}
+		&:nth-child(5) {
+			background-image: url(../img/card-mini/card-mini-5.jpg);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+		}
+		&::after {
+			display: none;
+		}
+	}
+	.swiper-pagination-bullet-active {
+		border-radius: 0;
+		position: relative;
+		&::after {
+			background-color: $mainTextColor;
+			display: block;
+			position: absolute;
+			bottom: 0;
+			border-radius: 0;
+			width: 70px;
+			height: 2px;
+		}
+	}
+}
