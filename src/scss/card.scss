@@ -1,0 +1,30 @@
+.card {
+	&__props {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 90px 0 15px;
+		.breadcrumbs {
+			margin-bottom: 0px;
+		}
+	}
+	.prev-next-links {
+		font-size: 10px;
+		line-height: 1;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: $textColor;
+
+		display: flex;
+		align-items: center;
+		gap: 20px;
+	}
+	&__link {
+		&:hover {
+			color: $accentColor;
+		}
+	}
+	&__link--active {
+		color: $mainTextColor;
+	}
+}

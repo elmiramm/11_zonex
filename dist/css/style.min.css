@@ -645,14 +645,12 @@ select {
   border-bottom: 1px solid #eee;
 }
 .breadcrumbs .card-breadcrumbs {
-  padding-top: 90px;
-  padding-bottom: 15px;
+  padding: 0;
 }
 .breadcrumbs__list {
   display: flex;
   align-items: center;
   gap: 36px;
-  overflow-x: auto;
 }
 .breadcrumbs__list-item {
   position: relative;
@@ -1728,6 +1726,32 @@ input[type=range]::-moz-slider-thumb {
   color: #ff1847;
 }
 
+.card__props {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 90px 0 15px;
+}
+.card__props .breadcrumbs {
+  margin-bottom: 0px;
+}
+.card .prev-next-links {
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #858585;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.card__link:hover {
+  color: #ff1847;
+}
+.card__link--active {
+  color: #151515;
+}
+
 @media (max-width: 1800px) {
   .products__list {
     justify-content: center;
@@ -2011,6 +2035,14 @@ input[type=range]::-moz-slider-thumb {
   .shops__banner {
     min-height: 220px;
   }
+  .card__props {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 15px;
+  }
+  .card__props .breadcrumbs {
+    flex: 1 1 100%;
+  }
 }
 @media (max-width: 479.98px) {
   .user {
@@ -2059,6 +2091,10 @@ input[type=range]::-moz-slider-thumb {
   .footer__selects {
     gap: 20px;
     flex-direction: column;
+  }
+  .breadcrumbs__list {
+    flex-wrap: wrap;
+    gap: 5px 36px;
   }
 }
 @media (max-width: 380px) {
