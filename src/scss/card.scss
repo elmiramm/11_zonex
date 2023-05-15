@@ -31,4 +31,279 @@
 		display: flex;
 		gap: 15px;
 	}
+
+	&-top {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 100px;
+		&__left {
+			max-width: 762px;
+		}
+		&__right {
+			max-width: 462px;
+		}
+	}
+	&__info {
+		margin-top: 60px;
+		margin-bottom: 60px;
+	}
+	&__info-prop {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+
+		font-size: 10px;
+		line-height: 1;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: #111;
+	}
+	&__info-title {
+		font-size: 24px;
+		line-height: 1;
+		font-weight: 500;
+
+		margin: 20px 0;
+	}
+	&__info-rate {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+
+		margin-bottom: 30px;
+	}
+	&__rate-stars {
+		display: flex;
+		align-items: center;
+	}
+	&__rate-text {
+		font-size: 13px;
+		line-height: 1;
+		color: $textColor;
+	}
+	.icon-star-filled::before {
+		color: #03d607;
+	}
+	.icon-star-filled:last-child::before {
+		color: #ccc;
+	}
+
+	&__info-price {
+		display: flex;
+		align-items: flex-end;
+
+		gap: 22px;
+
+		margin-bottom: 20px;
+	}
+	.price__current {
+		font-size: 24px;
+		font-weight: 700;
+		line-height: 1;
+	}
+
+	.price__off {
+		font-size: 16px;
+		line-height: 1;
+		color: #959595;
+		text-decoration: line-through;
+	}
+
+	&__info-descr {
+		color: #454545;
+		margin-bottom: 60px;
+	}
+
+	&__select-text {
+		font-size: 10px;
+		line-height: 1;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: $textColor;
+
+		margin-bottom: 15px;
+	}
+	&__select--selected {
+		color: #151515;
+	}
+	.color-select {
+		margin-bottom: 30px;
+	}
+	.color-select__list {
+		display: flex;
+		gap: 5px;
+		align-items: center;
+	}
+
+	.color-select__list-item {
+		width: 32px;
+		height: 32px;
+		border-radius: 50%;
+		border: 1px solid #cdcdcd;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.color-select__btn {
+		width: 24px;
+		height: 24px;
+		border-radius: 50%;
+
+		font-size: 0px;
+		&.red {
+			background-color: #ff0000;
+		}
+		&.orange {
+			background-color: #ffa500;
+		}
+		&.green {
+			background-color: #088d08;
+		}
+		&.white {
+			background: #fff;
+			border: 0.5px solid #000;
+		}
+		&.black {
+			background-color: #000;
+		}
+		&.brown {
+			background-color: #7f4f2d;
+		}
+		&.purple {
+			background-color: #800080;
+		}
+		&.grey {
+			background-color: #808080;
+		}
+	}
+
+	.size-select {
+		margin-bottom: 15px;
+		&__props {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			margin-bottom: 15px;
+
+			.card__select-text {
+				margin-bottom: 0;
+			}
+			.size-charts {
+				font-size: 10px;
+				line-height: 1;
+				font-weight: 700;
+				color: $textColor;
+				text-transform: uppercase;
+				&:hover {
+					color: $accentColor;
+				}
+			}
+		}
+		&__list {
+			display: flex;
+			gap: 5px;
+		}
+		&__btn {
+			width: 42px;
+			height: 32px;
+			border: 1px solid #cccccc;
+
+			color: $textColor;
+		}
+	}
+
+	&__clear-btn {
+		display: flex;
+		align-items: center;
+		gap: 4px;
+
+		font-size: 10px;
+		line-height: 1;
+		font-weight: 700;
+		color: #d54f4f;
+		text-transform: uppercase;
+	}
+
+	.count-btn-block {
+		width: 100%;
+		padding: 15px;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		border: 1px solid #cccccc;
+
+		margin-bottom: 10px;
+
+		&__count {
+			color: $mainTextColor;
+			font-size: 13px;
+			line-height: 1;
+			font-weight: 700;
+		}
+		.icon-minus::before, 
+		.icon-plus::before {
+			color: $textColor;
+		}
+	}
+	&__btn {
+		width: 100%;
+		padding: 25px;
+		
+		font-size: 10px;
+		line-height: 1;
+		font-weight: 700;
+		text-transform: uppercase;
+	
+	}
+	.add-to-cart {
+		color: #fff;
+		background-color: $mainTextColor;
+
+		margin-bottom: 10px;
+		transition: background-color 0.3s ease;
+		&:hover {
+			background-color: $accentColor;
+		}
+	}
+
+	.add-to-wish {
+		color: #151515;
+		background-color: #f2f2f2;
+		transition: all 0.3s ease;
+
+		margin-bottom: 60px;
+		&:hover {
+			background-color: $accentColor;
+			color: #fff;
+		}
+	}
+	.text-block {
+		display: flex;
+		gap: 30px;
+
+		margin-bottom: 20px;
+
+		.card__select-text {
+			margin-bottom: 0;
+		}
+	}
+	.share {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+
+		&__text {
+			font-size: 10px;
+			line-height: 1;
+			font-weight: 700;
+			text-transform: uppercase;
+			color: $textColor;
+		}
+	}
+	
 }
