@@ -646,4 +646,26 @@ window.onload = function () {
 		// ----чекбоксы-End------
 	}
 
+
+	// ------блок выбора цвета------
+	const colorSelect = document.querySelector('.color-select');
+
+	if (colorSelect) {
+		colorSelect.addEventListener("click", (el) => {
+			const target = el.target;
+			if (target.classList.contains('color-select__btn')) {
+				colorSelect.querySelectorAll('.color-select__list-item').forEach(listItem => {
+					listItem.classList.remove('color-select__btn--active');
+				})
+				target.closest('.color-select__list-item').classList.add('color-select__btn--active');
+				const selectedText = colorSelect.querySelector('.card__select--selected');
+				selectedText.textContent = target.textContent;
+			}
+		});
+	}
+	// -----блок выбора цвета---End
+
+	// ------блок выбора размера------
+	// ------блок выбора размера-Edn-----
+
 }

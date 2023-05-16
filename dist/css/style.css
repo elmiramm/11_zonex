@@ -1914,6 +1914,9 @@ input[type=range]::-moz-slider-thumb {
   justify-content: center;
   align-items: center;
 }
+.card .color-select__btn--active {
+  border: 1px solid #151515;
+}
 .card .color-select__btn {
   width: 24px;
   height: 24px;

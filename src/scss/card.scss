@@ -146,6 +146,10 @@
 		align-items: center;
 	}
 
+	.color-select__btn--active {
+		border: 1px solid $mainTextColor;
+	}
+
 	.color-select__btn {
 		width: 24px;
 		height: 24px;
@@ -177,6 +181,7 @@
 		&.grey {
 			background-color: #808080;
 		}
+
 	}
 
 	.size-select {
