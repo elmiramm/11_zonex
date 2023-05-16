@@ -211,12 +211,16 @@
 			display: flex;
 			gap: 5px;
 		}
+	
 		&__btn {
 			width: 42px;
 			height: 32px;
 			border: 1px solid #cccccc;
 
 			color: $textColor;
+			&--active {
+				border: 1px solid $mainTextColor;
+			}
 		}
 	}
 

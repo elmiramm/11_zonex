@@ -1980,6 +1980,9 @@ input[type=range]::-moz-slider-thumb {
   border: 1px solid #cccccc;
   color: #858585;
 }
+.card .size-select__btn--active {
+  border: 1px solid #151515;
+}
 .card__clear-btn {
   display: flex;
   align-items: center;

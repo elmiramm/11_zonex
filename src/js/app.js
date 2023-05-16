@@ -666,6 +666,20 @@ window.onload = function () {
 	// -----блок выбора цвета---End
 
 	// ------блок выбора размера------
+	const sizeSelect = document.querySelector('.size-select');
+	if (sizeSelect) {
+		sizeSelect.addEventListener("click", (el) => {
+			const target = el.target;
+			if (target.classList.contains('size-select__btn')) {
+				sizeSelect.querySelectorAll('.size-select__btn').forEach(btn => {
+					btn.classList.remove('size-select__btn--active');
+				})
+				target.classList.add('size-select__btn--active');
+				const selectedText = sizeSelect.querySelector('.card__select--selected');
+				selectedText.textContent = target.textContent;
+			}
+		});
+	}
 	// ------блок выбора размера-Edn-----
 
 }
