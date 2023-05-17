@@ -14,7 +14,8 @@ if (document.querySelector(".products__inner")) {
 }
 //--------MixitUp-End---------------------------------------------------------------
 
-
+const sizeSelect = document.querySelector('.size-select');
+const colorSelect = document.querySelector('.color-select');
 
 
 // ------Swiper-----------------------------------------------------------------------
@@ -427,6 +428,21 @@ window.onload = function () {
 		}
 		//----------Click on "Column number" - block-End-----------
 
+		//----------click on clear-btn on card-page----------
+		if (targetElement.classList.contains('card__clear-btn') || targetElement.closest('.card__clear-btn')) {
+			sizeSelect.querySelector('.card__select--selected').textContent = 'select a size';
+			const activeBtnSize = sizeSelect.querySelector('.size-select__btn--active');
+			if (activeBtnSize) {
+				activeBtnSize.classList.remove('size-select__btn--active');
+			}
+			colorSelect.querySelector('.card__select--selected').textContent = 'choose color';
+			const activeBtnColor = colorSelect.querySelector('.color-select__btn--active');
+			if (activeBtnColor) {
+				activeBtnColor.classList.remove('color-select__btn--active');
+			}
+
+		}
+		//----------click on clear-btn on card-page-End---------
 
 	}
 	//------Действия-при-кликах-End-------------------------------------------------------------
@@ -648,7 +664,7 @@ window.onload = function () {
 
 
 	// ------блок выбора цвета------
-	const colorSelect = document.querySelector('.color-select');
+	// const colorSelect = document.querySelector('.color-select');
 
 	if (colorSelect) {
 		colorSelect.addEventListener("click", (el) => {
@@ -666,7 +682,7 @@ window.onload = function () {
 	// -----блок выбора цвета---End
 
 	// ------блок выбора размера------
-	const sizeSelect = document.querySelector('.size-select');
+	// const sizeSelect = document.querySelector('.size-select');
 	if (sizeSelect) {
 		sizeSelect.addEventListener("click", (el) => {
 			const target = el.target;
