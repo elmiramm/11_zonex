@@ -70,7 +70,88 @@
 		}
 	}
 }
-
+@media (max-width: 1150px) {
+	.card {
+		&__info {
+			margin-bottom: 20px;
+			margin-top: 20px;
+		}
+		&-top {
+			flex-direction: column;
+			margin-bottom: 50px;
+		}
+		&-top__left {
+			max-width: 100%;
+		}
+		&-top__right {
+			max-width: 100%;
+		}
+		.btns {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 20px;
+			gap: 10px;
+			flex-wrap: wrap;
+		}
+		&__btn {
+			max-width: 160px;
+			padding: 20px;
+			margin-bottom: 0;
+			min-width: 160px;
+		}
+		.count-btn-block {
+			width: 160px;
+			max-width: 160px;
+			display: inline-flex;
+			min-height: 50px;
+			margin-bottom: 0;
+		}
+		.add-to-wish {
+			margin-bottom: 0;
+		}
+		.add-to-cart {
+			margin-bottom: 0;
+		}
+		.color-select__list {
+			flex-wrap: wrap;
+		}
+		.card__info-price {
+			gap: 10px;
+		}
+		.text-block {
+			gap: 10px;
+			flex-wrap: wrap;
+		}
+		.size-select__props {
+			flex-wrap: wrap;
+			gap: 10px;
+		}
+		.card__info-descr {
+			margin-bottom: 20px;
+		}
+		.price__current {
+			font-size: 18px;
+		}
+		.price__off {
+			font-size: 12px;
+		}
+		.slider-card {
+			flex-direction: column;
+		}
+		.slider-card .swiper-pagination-bullets {
+			flex-direction: row;
+			gap: 5px;
+		}
+		.slider-card .swiper-pagination-bullet {
+			width: 40px;
+			height: 60px;
+		}
+		.swiper-pagination-bullet-active::after {
+			width: 40px;
+		}
+	}
+}
 @media (max-width: 1100px) {
 	.shops {
 		&__banner {

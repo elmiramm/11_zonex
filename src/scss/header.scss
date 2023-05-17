@@ -36,6 +36,10 @@
 			color: $accentColor;
 		}
 	}
+	&--open {
+		position: relative;
+		z-index: 8;
+	}
 	
 }
 
@@ -44,7 +48,7 @@
 	width: 115px;
 	margin: 0 15px;
 	position: relative;
-	z-index: 6;
+	z-index: 8;
 }
 
 .user {
@@ -54,7 +58,7 @@
 	align-items: center;
 	width: 40%;
 	position: relative;
-	z-index: 6;
+	z-index: 8;
 	&__cart {
 		display: flex;
 		align-items: center;
