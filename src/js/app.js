@@ -696,6 +696,34 @@ window.onload = function () {
 			}
 		});
 	}
-	// ------блок выбора размера-Edn-----
+	// ------блок выбора размера-End-----
+
+	// -----count-btn-block on card-page----
+	const countBtnBlock = document.querySelector('.count-btn-block');
+	if (countBtnBlock) {
+		countBtnBlock.addEventListener("click", (el) => {
+			const element = el.target;
+			const elem = countBtnBlock.querySelector('.count-btn-block__count');
+			let countElement = Number(elem.textContent);
+
+			if (element.classList.contains('icon-minus') || element.closest('.icon-minus')) {
+				if (countElement > 1) {
+					countElement -= 1;
+					elem.textContent = countElement;
+				}
+			}
+
+			if (element.classList.contains('icon-plus') || element.closest('.icon-plus')) {
+				countElement += 1;
+				elem.textContent = countElement;
+			}
+		})
+	}
+	// -----count-btn-block on card-page-End---
+
+
+
+
+
 
 }
