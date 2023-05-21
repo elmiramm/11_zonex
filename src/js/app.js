@@ -3,10 +3,17 @@ import Swiper, { Navigation, Pagination, Parallax, Autoplay } from 'swiper';
 import mixitup from 'mixitup';
 import { spoilers } from "./modules/spoilers.js";
 import { filters } from "./modules/filters.js";
+import SimpleBar from 'simplebar';
 
 flsFunctions.isWebp();
 spoilers();
 filters();
+
+// ------Simplebar-----------------
+if (document.querySelector('.card__descr-nav')) {
+	new SimpleBar(document.querySelector('.card__descr-nav'));
+}
+// ------Simplebar-End----------------
 
 //--------MixitUp------------------------------------------------------------------
 if (document.querySelector(".products__inner")) {

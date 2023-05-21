@@ -327,5 +327,51 @@
 			color: $textColor;
 		}
 	}
+
+	&__descr {
+		display: flex;
+		justify-content: space-between;
+		gap: 10px;
+		&-left {
+			font-size: 15px;
+			width: 210px;
+		}
+		&-nav {
+			max-height: 210px;
+			width: 100%;
+		}
+		
+		&-item {
+			margin-top: 30px;
+			&:not(:last-child) {
+				margin-bottom: 25px;
+			}
+		}
+		&-link {
+			&:hover {
+				color: $accentColor;
+			}
+		}
+		&-link--active {
+			font-weight: 700;
+		}
+		&-right {
+			max-width: 875px;
+			margin-right: 110px;
+		}
+		&-text {
+			display: none;
+			p {
+				font-size: 13px;
+				line-height: 2;
+				&:not(:last-child) {
+					margin-bottom: 45px;
+				}
+			}
+		}
+		&-text--active {
+			display: block;
+		}
+	}
 	
 }
