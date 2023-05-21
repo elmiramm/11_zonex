@@ -992,8 +992,8 @@ button.active-link:hover {
   font-size: 11px;
   line-height: 1.2;
   color: #858585;
-  transform: translateX(-150%);
-  transition: transform 0.3s ease;
+  transform: translateX(-1500%);
+  transition: transform 0.5s ease;
 }
 .purched--visible {
   transform: translateX(0);
@@ -1833,6 +1833,7 @@ input[type=range]::-moz-slider-thumb {
 }
 .card-top__left {
   max-width: 762px;
+  position: relative;
 }
 .card-top__right {
   max-width: 462px;
