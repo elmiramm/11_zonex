@@ -2307,6 +2307,9 @@ input[type=range]::-moz-slider-thumb {
   text-transform: uppercase;
   color: #858585;
 }
+.card__bottom {
+  margin-bottom: 100px;
+}
 .card__descr {
   display: flex;
   justify-content: space-between;

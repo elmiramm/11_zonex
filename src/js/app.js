@@ -451,6 +451,21 @@ window.onload = function () {
 		}
 		//----------click on clear-btn on card-page-End---------
 
+		//--------click on description-link on card-page--------
+		if (targetElement.classList.contains('card__descr-link') || targetElement.closest('.card__descr-link')) {
+			document.querySelectorAll('.card__descr-text').forEach(item => {
+				item.classList.remove('card__descr-text--active');
+			});
+			const hrefAttr = targetElement.getAttribute('href');
+			document.querySelectorAll('.card__descr-text').forEach(item => {
+				if (item.dataset.target === hrefAttr) {
+					console.log(item.dataset);
+					item.classList.add('card__descr-text--active');
+				}
+			});
+		}
+		//--------click on description-link on card-page-End----
+
 	}
 	//------Действия-при-кликах-End-------------------------------------------------------------
 
