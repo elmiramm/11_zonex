@@ -464,6 +464,18 @@ window.onload = function () {
 				}
 			});
 		}
+		if (targetElement.classList.contains('card__descr-link-span')) {
+			document.querySelectorAll('.card__descr-text').forEach(item => {
+				item.classList.remove('card__descr-text--active');
+			});
+			const hrefAttr = targetElement.closest('.card__descr-link').getAttribute('href');
+			document.querySelectorAll('.card__descr-text').forEach(item => {
+				if (item.dataset.target === hrefAttr) {
+					console.log(item.dataset);
+					item.classList.add('card__descr-text--active');
+				}
+			});
+		}
 		//--------click on description-link on card-page-End----
 
 	}

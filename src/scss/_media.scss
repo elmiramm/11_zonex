@@ -69,6 +69,14 @@
 			}
 		}
 	}
+	.card {
+		&__descr {
+			flex-direction: column;
+		}
+		&__descr-right {
+			margin-right: 0;
+		}
+	}
 }
 @media (max-width: 1150px) {
 	.card {

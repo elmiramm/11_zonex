@@ -2411,6 +2411,12 @@ input[type=range]::-moz-slider-thumb {
   .filter__list--discount {
     columns: 4;
   }
+  .card__descr {
+    flex-direction: column;
+  }
+  .card__descr-right {
+    margin-right: 0;
+  }
 }
 @media (max-width: 1150px) {
   .card__info {
