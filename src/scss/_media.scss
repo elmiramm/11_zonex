@@ -70,6 +70,9 @@
 		}
 	}
 	.card {
+		&__bottom {
+			margin-bottom: 50px;
+		}
 		&__descr {
 			flex-direction: column;
 		}

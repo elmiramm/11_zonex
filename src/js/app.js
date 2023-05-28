@@ -202,6 +202,50 @@ if (document.querySelector('.slider-card__body')) {
 		// }
 	});
 }
+if (document.querySelector('.slider-related__body')) {
+	new Swiper('.slider-related__body', {
+		observer: true, //обновляет swiper при изменении элементов слайдера
+		observeParents: true, //обновляет swiper при изменении в родительских элементах слайдера
+		slidesPerView: 4,
+		slidesPerGroup: 4,
+		spaceBetween: 0,
+		loop: true, // за последним слайдем будет идти заново первый
+		watchOverflow: false,
+		speed: 800,
+		loopAdditionalSlides: 5,
+		preloadImage: false,
+		// parallax: true,
+		simulateTouch: true, //вкл/выкл перетаскинавия на ПК
+		pagination: {
+			el: '.slider-related__controls .dots',
+			clickable: true, //true - можно кликнуть на dotts и перейти на нужный слайд
+		},
+		// autoplay: {
+		// 	delay: 3000, //Пауза м.д. прокрутками
+		// 	stopOnLastSlide: false,
+		// 	disabledOnInteraction: false,
+		// },
+		effect: 'slide', //значение по умолчанию - перелистывает слайды, 'fade' - смена прозрачности
+		// navigation: {
+		// 	nextEl: '.slider-catalog .slider-arrow--next',
+		// 	prevEl: '.slider-catalog .slider-arrow--prev',
+		// },
+		// breakpoints: { //Mobile First - значения от заданной точки и больше 
+		// 	279: {
+		// 		slidesPerView: 1.1,
+		// 		spaceBetween: 15,
+		// 	},
+		// 	768: {
+		// 		slidesPerView: 2,
+		// 		spaceBetween: 20,
+		// 	},
+		// 	992: {
+		// 		slidesPerView: 3,
+		// 		spaceBetween: 32,
+		// 	},
+		// }
+	});
+}
 // ------Swiper-End---------------------------------------------------------------------
 
 
