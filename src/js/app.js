@@ -230,20 +230,29 @@ if (document.querySelector('.slider-related__body')) {
 		// 	nextEl: '.slider-catalog .slider-arrow--next',
 		// 	prevEl: '.slider-catalog .slider-arrow--prev',
 		// },
-		// breakpoints: { //Mobile First - значения от заданной точки и больше 
-		// 	279: {
-		// 		slidesPerView: 1.1,
-		// 		spaceBetween: 15,
-		// 	},
-		// 	768: {
-		// 		slidesPerView: 2,
-		// 		spaceBetween: 20,
-		// 	},
-		// 	992: {
-		// 		slidesPerView: 3,
-		// 		spaceBetween: 32,
-		// 	},
-		// }
+		breakpoints: { //Mobile First - значения от заданной точки и больше 
+			180: {
+				slidesPerView: 1,
+				slidesPerGroup: 1,
+			},
+			468: {
+				slidesPerView: 1,
+				slidesPerGroup: 1,
+			},
+			768: {
+				slidesPerView: 2,
+				slidesPerGroup: 2,
+			},
+			992: {
+				slidesPerView: 3,
+				slidesPerGroup: 3,
+			},
+			1350: {
+				slidesPerView: 4,
+				slidesPerGroup: 4,
+			},
+
+		}
 	});
 }
 // ------Swiper-End---------------------------------------------------------------------

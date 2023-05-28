@@ -24,6 +24,17 @@
 			font-size: 25px;
 		}
 	}
+	.slider-related {
+		.swiper-slide {
+			text-align: center;
+		}
+		.products__img {
+			margin: 0 auto;
+		}
+		.products__item-status {
+			justify-content: center;
+		}
+	}
 }
 
 @media (max-width: 1200px) {

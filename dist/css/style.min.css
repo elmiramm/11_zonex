@@ -449,6 +449,9 @@
   height: 2px;
 }
 
+.slider-related .swiper-pagination-bullets {
+  flex-wrap: wrap;
+}
 .slider-related .swiper-pagination-bullet::after {
   background-color: #cccccc;
 }
@@ -2402,6 +2405,15 @@ input[type=range]::-moz-slider-thumb {
   }
   .banners__item-title {
     font-size: 25px;
+  }
+  .slider-related .swiper-slide {
+    text-align: center;
+  }
+  .slider-related .products__img {
+    margin: 0 auto;
+  }
+  .slider-related .products__item-status {
+    justify-content: center;
   }
 }
 @media (max-width: 1200px) {
