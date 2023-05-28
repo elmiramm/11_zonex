@@ -96,3 +96,21 @@
 		}
 	}
 }
+
+.slider-related {
+	.swiper-pagination-bullet {
+		&::after {
+			background-color: #cccccc;
+		}
+	}
+	.swiper-pagination-bullet-active {
+		background-color: #eeeeee;
+		width: 20px;
+		height: 20px;
+		&::after {
+			width: 6px;
+			height: 6px;
+			background: $mainTextColor ;
+		}
+	}
+}
