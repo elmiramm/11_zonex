@@ -105,3 +105,26 @@
 		}
 	}
 }
+
+.products__item-title {
+	display: flex;
+	justify-content: space-between;
+}
+.products__item-link:hover + .hover-btn-block {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.hover-btn-block {
+	display: none;
+
+	width: 52px;
+	
+	margin-right: 30px;
+}
+
+.products-icon:hover {
+	.products-icon::before {
+		color: $accentColor;
+	}
+}

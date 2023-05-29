@@ -34,6 +34,13 @@
 		.products__item-status {
 			justify-content: center;
 		}
+		.products__item-title {
+			flex-direction: column;
+			align-items: center;
+		}
+		.hover-btn-block {
+			margin-right: 0;
+		}
 	}
 }
 
@@ -293,6 +300,16 @@
 		&__buttons {
 			flex-direction: column;
 		}
+	}
+	.products__item-title {
+		flex-direction: column;
+	}
+	.hover-btn-block {
+		display: none;
+
+		width: 40px;
+		
+		margin-right: 15px;
 	}
 }
 @media (max-width: $burgerBP) {
