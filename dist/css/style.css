@@ -2387,6 +2387,30 @@ input[type=range]::-moz-slider-thumb {
   margin-top: 70px;
 }
 
+.to-top {
+  position: fixed;
+  right: 4%;
+  bottom: 5%;
+  display: block;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+}
+.to-top::before {
+  transform: rotate(180deg);
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.to-top:hover::before {
+  color: #ff1847;
+  transition: all 0.3s ease;
+}
+
 @media (max-width: 1800px) {
   .products__list {
     justify-content: center;

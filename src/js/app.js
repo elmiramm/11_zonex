@@ -808,9 +808,15 @@ window.onload = function () {
 	}
 	// -----count-btn-block on card-page-End---
 
-
-
-
-
+	if (document.querySelector('.to-top')) {
+		document.querySelector('.to-top').addEventListener('click', (e) => {
+			e.preventDefault();
+			const header = document.querySelector('.header');
+			header.scrollIntoView({
+				behavior: "smooth",
+				block: "start"
+			});
+		});
+	}
 
 }
